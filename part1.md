@@ -1,4 +1,4 @@
-# OracleJET Workshop 2019: Part 1 -- Web Component for Visual Builder integration with Oracle ERP
+# Part 1: Develop a Web Component for Visual Builder Interaction with Oracle ERP
 This workshop shows how to create a web component for 
 use with JET Core or Visual Builder, that contains a JET Timeline component 
 which will read data from the Oracle ERP service showing invoice information.
