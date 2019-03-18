@@ -136,7 +136,24 @@ var currentDate = new Date(self.currentDateString).toISOString();
 self.referenceObjects = [{value: currentDate}];
 ```
 
-3. In the View, drop in a timeline component, copied and pasted from the Cookbook. 
+3. In the View, drop in a timeline component, copied and pasted from the Cookbook.
+
+```html #button { border: none; }
+<oj-timeline id='tline' data-bind='attr: {"aria-label": "Single Series Timeline Demo. Current date is " + currentDateString}'
+             minor-axis='{
+               "scale": "weeks",
+               "zoomOrder": ["months", "weeks", "days"]
+             }'
+             major-axis.scale='quarters'
+             start='[[new Date("Jan 1, 2010").toISOString()]]'
+             end='[[new Date("Dec 31, 2010").toISOString()]]'
+             selection-mode='single'
+             reference-objects='[[referenceObjects]]'
+             selection='["e4"]'
+             series='[[timelineSeries]]'
+             style='width:100%;height:350px'>
+</oj-timeline>
+```
 
 4. We will provide the erpData.json file, with local data in the component – local method and remote method. Show how to customize attributes of the timeline based on the data coming in – thumbnail and svg styling.
 
