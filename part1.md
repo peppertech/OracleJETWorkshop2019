@@ -56,26 +56,24 @@ You are now ready to get started with Oracle JET!
 
 ### (c) Creating an Oracle JET Application
 
-We will use the Oracle JET "basic" template so that we can focus on component creation in the next section, and not on routing, etc. That will give us an 'index.html' file, where we will design the component, with the data initially coming from the 'src/js/appControler.js' file.
+We will use the Oracle JET 'basic' template so that we have the simplest possible Oracle JET application, enabling us to focus on component creation in the next section, and not on routing. The 'basic' template will give us an 'index.html' file, where we will design the component, with the data initially hardcoded and coming from the 'src/js/appControler.js' file.
 
 1. Run the following in the terminal:
 
 ```js #button { border: none; }
-ojet create EmployeeManager --template=basic
+ojet create BasicApp --template=basic
 ```
 **Note:** This process may take some time.
 
-2. CD into 'EmployeeManager' and run the following in the terminal and look in the browser:
+2. CD into 'BasicApp' and run the following in the terminal and look in the browser:
 
 ```js #button { border: none; }
 ojet serve
 ```
 
-After a few moments, you should see an empty page.
+After a few moments, you should see an empty page in the browser.
 
-3. Make sure you have a JavaScript editor. Simply using Notepad will not provide the syntax coloring and other JavaScript editor features you need. In your editor, open the sources, explore the structure, and learn about what everything does.
-
-4. Make a change in the 'src/js/views/dashboard.html' file and notice what happens in the browser, without needing to refresh.
+3. Make sure you have a JavaScript editor. Simply using Notepad will not provide the syntax coloring and other JavaScript editor features you need. 
 
 ## Develop the Web Component
 
