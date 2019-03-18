@@ -111,9 +111,9 @@ define(['ojs/ojcore', 'knockout', 'ojs/ojknockout', 'my-invoice-timeline/loader'
 
 ### (b) Set Up a Timeline Component from the Cookbook
 
-We are going to take the [Single Series Timeline from the Oracle JET Cookbook](https://www.oracle.com/webfolder/technetwork/jet/jetCookbook.html?component=timeline&demo=basicTimeline) as a starting point and then customize it to our requirements.
+We are going to take the [Single Series Timeline from the Oracle JET Cookbook](https://www.oracle.com/webfolder/technetwork/jet/jetCookbook.html?component=timeline&demo=basicTimeline) as a starting point and then customize it to our requirements in subsequent sections.
 
-1. Put [this static data](https://gist.github.com/peppertech/52bee52327ae9a1c0958559da78508a8) into a file named 'data.json', in a new folder named 'data', in the 'src/js/jet-composites/my-invoice-timeline' folder. Load it using the 'text!' protocol, into the Web Component, and make sure to reference it in the callback function, as 'data' below, in the same order as in the define statement, as shown below:
+1. Put [this static data](https://gist.github.com/peppertech/52bee52327ae9a1c0958559da78508a8) into a file named 'data.json', in a new folder named 'data', in the 'src/js/jet-composites/my-invoice-timeline' folder. Load it using the 'text!' protocol, into the Web Component as shown below in the 'my-invoice-timeline-viewModel.js' file, and make sure to reference it in the callback function, for example, as 'data' shown below, in the same order as in the define statement:
 
 ```js #button { border: none; }
 define(
@@ -123,7 +123,7 @@ define(
         function (ko, data, $, componentStrings) {
 ```
         
-2. In the...
+2. In the 'my-invoice-timeline-viewModel.js' file, replace the example variable 'self.messageText' with the following content, which is copied directly from the  [Single Series Timeline from the Oracle JET Cookbook](https://www.oracle.com/webfolder/technetwork/jet/jetCookbook.html?component=timeline&demo=basicTimeline), with the 'data' passed in from the step above into the 'items' variable:
 
 ```js #button { border: none; }
 var items = ko.observableArray(JSON.parse(data));
@@ -136,7 +136,7 @@ var currentDate = new Date(self.currentDateString).toISOString();
 self.referenceObjects = [{value: currentDate}];
 ```
 
-3. In the View, drop in a timeline component, copied and pasted from the Cookbook.
+3. In the View, that is, the 'my-invoice-timeline-view.html' file, drop in a timeline component, here it is copied and pasted directly from the [Single Series Timeline from the Oracle JET Cookbook](https://www.oracle.com/webfolder/technetwork/jet/jetCookbook.html?component=timeline&demo=basicTimeline).
 
 ```html #button { border: none; }
 <oj-timeline id='tline' data-bind='attr: {"aria-label": "Single Series Timeline Demo. Current date is " + currentDateString}'
@@ -155,17 +155,21 @@ self.referenceObjects = [{value: currentDate}];
 </oj-timeline>
 ```
 
-4. We will provide the erpData.json file, with local data in the component – local method and remote method. Show how to customize attributes of the timeline based on the data coming in – thumbnail and svg styling.
+4. In the browser, you should now see the Timeline scenario working and displaying data, exactly as shown in the [Single Series Timeline from the Oracle JET Cookbook].
 
-5. Form layout with two select boxes, one for the start year and one for the end year. Year generator, generates years. Set start date and end date of our timeline.
+### (c) Customizing the Timeline Component
 
-### (c) Use Real Data
+1. We will provide the erpData.json file, with local data in the component – local method and remote method. Show how to customize attributes of the timeline based on the data coming in – thumbnail and svg styling.
 
-The above works against local data. Create a connection to the data using an AJAX, using Basic authentication, so no getJSON, using an array data provider, to the real URL.
+2. Form layout with two select boxes, one for the start year and one for the end year. Year generator, generates years. Set start date and end date of our timeline.
 
-Go to index.html, items=[[dataProvider]], add a property in component.json file called 'items', type 'oj.DataProvider', displayName and description must be changed as well for Visual Builder.
+### (d) Use Real Data
 
-In timeline Web Component ViewModel, read the data coming in from the consumer.
+1. The above works against local data. Create a connection to the data using an AJAX, using Basic authentication, so no getJSON, using an array data provider, to the real URL.
+
+2. Go to index.html, items=[[dataProvider]], add a property in component.json file called 'items', type 'oj.DataProvider', displayName and description must be changed as well for Visual Builder.
+
+3. In timeline Web Component ViewModel, read the data coming in from the consumer.
 
 ## Part 3: Integrate into Visual Builder
 
