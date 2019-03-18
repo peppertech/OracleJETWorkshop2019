@@ -157,7 +157,7 @@ self.referenceObjects = [{value: currentDate}];
 
 4. In the browser, you should now see the Timeline scenario working and displaying data, exactly as shown in the [Single Series Timeline from the Oracle JET Cookbook].
 
-### (c) Customizing the Timeline Component
+### (c) Customize the Timeline Component
 
 1. We will provide the erpData.json file, with local data in the component – local method and remote method. Show how to customize attributes of the timeline based on the data coming in – thumbnail and svg styling.
 
