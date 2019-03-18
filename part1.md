@@ -36,11 +36,7 @@ npm install -g @oracle/ojet-cli
 ojet help
 ```
 
-You should see this:
-
-<table><tr><td>   
-<img src="images/Screen%20Shot%202018-06-22%20at%2022.47.54.png" alt="alt text" width="400" height="250">
-</td></tr></table>
+You should see information about Oracle JET command line arguments.
 
 3. Run the following to check that you have the correct version of Oracle JET:
 
