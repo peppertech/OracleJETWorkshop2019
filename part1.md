@@ -87,7 +87,7 @@ In the Terminal window, first kill the 'ojet' process, using Ctrl-C. This is bec
 ojet create component my-invoice-timeline
 ```
 
-**Note:** Instaed of the 'my-' prefix, uuse your initials or use your company prefix, to make your Web Component unique and not conflict with others. Remember to never use 'oj-' as prefix, which is reserved for the Oracle JET team.
+**Note:** Instaed of the 'my-' prefix, use your initials or use your company prefix, to make your Web Component unique and not conflict with others. Remember to never use 'oj-' as prefix, which is reserved for the Oracle JET team.
 
 2. Take a look at your source structure, find the new 'my-invoice-timeline' Web Component, in the 'src/jet-composites' folder, and explore its structure.
 
