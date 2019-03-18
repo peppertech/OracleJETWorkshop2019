@@ -89,21 +89,24 @@ ojet create component my-invoice-timeline
 
 **Note:** Instaed of the 'my-' prefix, use your initials or use your company prefix, to make your Web Component unique and not conflict with others. Remember to never use 'oj-' as prefix, which is reserved for the Oracle JET team.
 
-2. Take a look at your source structure, find the new 'my-invoice-timeline' Web Component, in the 'src/jet-composites' folder, and explore its structure.
+2. Take a look at your source structure, find the new 'my-invoice-timeline' Web Component, in the 'src/js/jet-composites' folder, and explore its structure.
 
 3. Load the loader, i.e., 'my-invoice-timeline/loader', at the end of the dependency list passed into the define() call of the 'src/js/appControler.js', as shown below:
 
 ```js #button { border: none; }
-define(['ojs/ojcore', 'knockout', 'ojs/ojarraydataprovider', 'ojs/ojknockout', 'my-invoice-timeline/loader'],
+define(['ojs/ojcore', 'knockout', 'ojs/ojknockout', 'my-invoice-timeline/loader'],
 ```
 
-4. Use the 'my-invoice-timeline' custom element a few times in 'index.html', as shown below, then run 'ojet serve' in the Terminal again, and notice that you now see multiple messages from the my-invoice-timeline Web Component.
+4. Use the 'my-invoice-timeline' custom element a few times in 'index.html', as shown below, **within the 'div' that has its role set to 'main'**.
 
 ```html #button { border: none; }
 <my-invoice-timeline></my-invoice-timeline>
 <my-invoice-timeline></my-invoice-timeline>
 ```
-**Note:** Remember to run 'ojet serve' to serve the application, since you killed the 'ojet' process in step 1 of this section.
+
+5. Run 'ojet serve' in the Terminal again, and notice that you now see multiple messages from the my-invoice-timeline Web Component.
+
+**Note:** Remember that you need to run 'ojet serve' to serve the application, since you killed the 'ojet' process in step 1 of this section.
 
 ### (b) Set Up a Timeline Component from the Cookbook
 
