@@ -155,7 +155,7 @@ self.referenceObjects = [{value: currentDate}];
 </oj-timeline>
 ```
 
-4. In the browser, you should now see the Timeline scenario working and displaying data, exactly as shown in the [Single Series Timeline from the Oracle JET Cookbook].
+4. In the browser, you should now see the Timeline scenario working and displaying data, exactly as shown in the [Single Series Timeline from the Oracle JET Cookbook](https://www.oracle.com/webfolder/technetwork/jet/jetCookbook.html?component=timeline&demo=basicTimeline).
 
 ### (c) Customize the Timeline Component
 
