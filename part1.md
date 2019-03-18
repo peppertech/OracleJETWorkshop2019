@@ -77,11 +77,33 @@ After a few moments, you should see an empty page in the browser.
 
 ## Part 2: Develop the Web Component
 
+In the Terminal window, first kill the 'ojet' process, using Ctrl-C. This is because you will be adding new files in this section. Whenever you add new files, first kill the 'ojet' process in the Terminal window, using Ctrl-C, and then, after creating new files as in step 2 below, restart the 'ojet' process via 'ojet serve'. The 'watch' process, provided by 'ojet', will only look for changes to existing files; it will not build and re-serve new files.
+
 ### Create the Web Component
 
 ojet create component my-invoice-timeline (use their initials). Use your company prefix, to make your Web Component unique and not conflict. Never use oj- which is reserved for the JET team.
 
-### Set Up a Timeline Component from the Cookbook
+### (a) Creating a Web Component
+
+1. In the root of your project, run the following:
+
+```js #button { border: none; }
+ojet create component my-invoice-timeline
+```
+
+2. Take a look at your source structure, find the new 'my-invoice-timeline' Web Component, in the 'src/jet-composites' folder, and explore its structure.
+
+3. Load the loader, i.e., 'my-invoice-timeline/loader', at the end of the dependency list passed into the define() call of the 'src/js/appControler.js'.
+
+4. Use the 'my-invoice-timeline' custom element a few times in 'index.html', as shown below, then run 'ojet serve' in the Terminal again, and notice that you now see multiple messages from the my-invoice-timeline Web Component.
+
+```html #button { border: none; }
+<my-invoice-timeline></my-invoice-timeline>
+<my-invoice-timeline></my-invoice-timeline>
+```
+**Note:** Remember to run 'ojet serve' to serve the application, since you killed the 'ojet' process in step 1 of this section.
+
+### (b) Set Up a Timeline Component from the Cookbook
 
 In the View, drop in a timeline component, copied and pasted from the Cookbook, with static data from the Cookbook: https://www.oracle.com/webfolder/technetwork/jet/jetCookbook.html?component=timeline&demo=basicTimeline
 
@@ -89,7 +111,7 @@ We will provide the erpData.json file, with local data in the component – loca
 
 Form layout with two select boxes, one for the start year and one for the end year. Year generator, generates years. Set start date and end date of our timeline.
 
-### Use Real Data
+### (c) Use Real Data
 
 The above works against local data. Create a connection to the data using an AJAX, using Basic authentication, so no getJSON, using an array data provider, to the real URL.
 
@@ -99,13 +121,13 @@ In timeline Web Component ViewModel, read the data coming in from the consumer.
 
 ## Part 3: Integrate into Visual Builder
 
-### Set Up the Service Provider
+### (a) Set Up the Service Provider
 
-### Create a Variable
+### (b) Create a Variable
 
-### Install the Web Component
+### (c) Install the Web Component
 
-### Use the Web Component
+### (d) Use the Web Component
 
-### Tweak the Web Component
+### (e) Tweak the Web Component
 
