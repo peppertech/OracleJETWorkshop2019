@@ -103,11 +103,15 @@ ojet create component my-invoice-timeline
 
 ### (b) Set Up a Timeline Component from the Cookbook
 
-In the View, drop in a timeline component, copied and pasted from the Cookbook, with static data from the Cookbook: https://www.oracle.com/webfolder/technetwork/jet/jetCookbook.html?component=timeline&demo=basicTimeline
+1. In the View, drop in a timeline component, copied and pasted from the Cookbook, with static data from the Cookbook: https://www.oracle.com/webfolder/technetwork/jet/jetCookbook.html?component=timeline&demo=basicTimeline
 
-We will provide the erpData.json file, with local data in the component – local method and remote method. Show how to customize attributes of the timeline based on the data coming in – thumbnail and svg styling.
+2. Put the content of the below into a file named 'data.json', in 'src/js':
 
-Form layout with two select boxes, one for the start year and one for the end year. Year generator, generates years. Set start date and end date of our timeline.
+https://www.oracle.com/webfolder/technetwork/jet/cookbook/dataVisualizations/timeline/basicTimeline/seriesOneData.json
+
+3. We will provide the erpData.json file, with local data in the component – local method and remote method. Show how to customize attributes of the timeline based on the data coming in – thumbnail and svg styling.
+
+4. Form layout with two select boxes, one for the start year and one for the end year. Year generator, generates years. Set start date and end date of our timeline.
 
 ### (c) Use Real Data
 
