@@ -79,10 +79,6 @@ After a few moments, you should see an empty page in the browser.
 
 In the Terminal window, first kill the 'ojet' process, using Ctrl-C. This is because you will be adding new files in this section. Whenever you add new files, first kill the 'ojet' process in the Terminal window, using Ctrl-C, and then, after creating new files as in step 2 below, restart the 'ojet' process via 'ojet serve'. The 'watch' process, provided by 'ojet', will only look for changes to existing files; it will not build and re-serve new files.
 
-### Create the Web Component
-
-ojet create component my-invoice-timeline (use their initials). Use your company prefix, to make your Web Component unique and not conflict. Never use oj- which is reserved for the JET team.
-
 ### (a) Creating a Web Component
 
 1. In the root of your project, run the following:
@@ -90,6 +86,8 @@ ojet create component my-invoice-timeline (use their initials). Use your company
 ```js #button { border: none; }
 ojet create component my-invoice-timeline
 ```
+
+**Note:** Instaed of the 'my-' prefix, uuse your initials or use your company prefix, to make your Web Component unique and not conflict with others. Remember to never use 'oj-' as prefix, which is reserved for the Oracle JET team.
 
 2. Take a look at your source structure, find the new 'my-invoice-timeline' Web Component, in the 'src/jet-composites' folder, and explore its structure.
 
