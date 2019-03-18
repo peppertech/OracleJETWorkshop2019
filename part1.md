@@ -107,6 +107,8 @@ define(['ojs/ojcore', 'knockout', 'ojs/ojarraydataprovider', 'ojs/ojknockout', '
 
 ### (b) Set Up a Timeline Component from the Cookbook
 
+TODO TODO TODO INCOMPLETE ETC
+
 We are going to take the [Single Series Timeline from the Oracle JET Cookbook](https://www.oracle.com/webfolder/technetwork/jet/jetCookbook.html?component=timeline&demo=basicTimeline) as a starting point and then customize it to our requirements.
 
 1. In the View, drop in a timeline component, copied and pasted from the Cookbook. 
