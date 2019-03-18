@@ -108,7 +108,7 @@ We are going to take the [Single Series Timeline from the Oracle JET Cookbook](h
 1. In the View, drop in a timeline component, copied and pasted from the Cookbook, with static data from the Cookbook. 
 
 2. Put [this content](https://www.oracle.com/webfolder/technetwork/jet/cookbook/dataVisualizations/timeline/basicTimeline/seriesOneData.json
-) into a file named 'data.json', in 'src/js':
+) into a file named 'data.json', in 'src/js'.
 
 3. We will provide the erpData.json file, with local data in the component – local method and remote method. Show how to customize attributes of the timeline based on the data coming in – thumbnail and svg styling.
 
