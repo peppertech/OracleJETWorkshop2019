@@ -91,7 +91,11 @@ ojet create component my-invoice-timeline
 
 2. Take a look at your source structure, find the new 'my-invoice-timeline' Web Component, in the 'src/jet-composites' folder, and explore its structure.
 
-3. Load the loader, i.e., 'my-invoice-timeline/loader', at the end of the dependency list passed into the define() call of the 'src/js/appControler.js'.
+3. Load the loader, i.e., 'my-invoice-timeline/loader', at the end of the dependency list passed into the define() call of the 'src/js/appControler.js', as shown below:
+
+```js #button { border: none; }
+define(['ojs/ojcore', 'knockout', 'ojs/ojarraydataprovider', 'ojs/ojknockout', 'my-invoice-timeline/loader'],
+```
 
 4. Use the 'my-invoice-timeline' custom element a few times in 'index.html', as shown below, then run 'ojet serve' in the Terminal again, and notice that you now see multiple messages from the my-invoice-timeline Web Component.
 
