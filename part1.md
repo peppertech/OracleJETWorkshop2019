@@ -89,7 +89,8 @@ ojet create component my-invoice-timeline
 
 **Note:** Instaed of the 'my-' prefix, use your initials or use your company prefix, to make your Web Component unique and not conflict with others. Remember to never use 'oj-' as prefix, which is reserved for the Oracle JET team.
 
-2. Take a look at your source structure, find the new 'my-invoice-timeline' Web Component, in the 'src/js/jet-composites' folder, and explore its structure.
+2. Take a look at your source structure, find the new 'my-invoice-timeline' Web Component, in the 'src/js/jet-composites' folder, and explore its structure. In particular, notice that the message 'Hello from Example Component' is defined in 'my-invoice-timeline-viewModel.js' and rendered in 'my-invoice-timeline-viewModel.html'.
+
 
 3. Load the loader, i.e., 'my-invoice-timeline/loader', at the end of the dependency list passed into the define() call of the 'src/js/appControler.js', as shown below:
 
@@ -104,7 +105,7 @@ define(['ojs/ojcore', 'knockout', 'ojs/ojknockout', 'my-invoice-timeline/loader'
 <my-invoice-timeline></my-invoice-timeline>
 ```
 
-5. Run 'ojet serve' in the Terminal again, and notice that you now see multiple messages from the my-invoice-timeline Web Component.
+5. Run 'ojet serve' in the Terminal again, and notice that you now see two instances of the 'Hello from Example Component' message from the 'my-invoice-timeline' Web Component.
 
 **Note:** Remember that you need to run 'ojet serve' to serve the application, since you killed the 'ojet' process in step 1 of this section.
 
