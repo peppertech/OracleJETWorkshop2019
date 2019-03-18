@@ -159,7 +159,7 @@ self.referenceObjects = [{value: currentDate}];
 
 ### (c) Customize the Timeline Component
 
-1. We will provide the erpData.json file, with local data in the component – local method and remote method. Show how to customize attributes of the timeline based on the data coming in – thumbnail and svg styling.
+1. We provide [the erpData.json file](https://gist.github.com/peppertech/8a9691dc68b0a1466b0b7012b86e2578), with local data in the component – local method and remote method. Show how to customize attributes of the timeline based on the data coming in – thumbnail and svg styling.
 
 2. Form layout with two select boxes, one for the start year and one for the end year. Year generator, generates years. Set start date and end date of our timeline.
 
