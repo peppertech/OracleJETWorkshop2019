@@ -111,13 +111,19 @@ define(['ojs/ojcore', 'knockout', 'ojs/ojknockout', 'my-invoice-timeline/loader'
 
 ### (b) Set Up a Timeline Component from the Cookbook
 
-TODO TODO TODO INCOMPLETE ETC
-
 We are going to take the [Single Series Timeline from the Oracle JET Cookbook](https://www.oracle.com/webfolder/technetwork/jet/jetCookbook.html?component=timeline&demo=basicTimeline) as a starting point and then customize it to our requirements.
 
-1. In the View, drop in a timeline component, copied and pasted from the Cookbook. 
+1. Put [this static data](https://gist.github.com/peppertech/52bee52327ae9a1c0958559da78508a8) into a file named 'data.json', in a new folder named 'data', in the 'src/js/jet-composites/my-invoice-timeline' folder. Load it using the 'text!' protocol, into the Web Component, and make sure to reference it in the callback function, as 'data' below, in the same order as in the define statement, as shown below:
 
-2. Put [this static data](https://gist.github.com/peppertech/52bee52327ae9a1c0958559da78508a8) into a file named 'data.json', in a new folder 'src/js/data'.
+```js #button { border: none; }
+define(
+    ['knockout', 
+     'text!./data/seriesOneData.json', 
+     'jquery', 'ojL10n!./resources/nls/my-invoice-timeline-strings'], 
+        function (ko, data, $, componentStrings) {
+```
+        
+2. In the View, drop in a timeline component, copied and pasted from the Cookbook. 
 
 3. We will provide the erpData.json file, with local data in the component – local method and remote method. Show how to customize attributes of the timeline based on the data coming in – thumbnail and svg styling.
 
