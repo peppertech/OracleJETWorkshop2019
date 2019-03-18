@@ -123,11 +123,24 @@ define(
         function (ko, data, $, componentStrings) {
 ```
         
-2. In the View, drop in a timeline component, copied and pasted from the Cookbook. 
+2. In the...
 
-3. We will provide the erpData.json file, with local data in the component – local method and remote method. Show how to customize attributes of the timeline based on the data coming in – thumbnail and svg styling.
+```js #button { border: none; }
+var items = ko.observableArray(JSON.parse(data));
+self.timelineSeries = ko.computed(function () {
+    return [{id: 's1', emptyText: 'No Data.', label: 'Oracle Events', items: items()}]
+});
+//
+self.currentDateString = "Feb 1, 2010";
+var currentDate = new Date(self.currentDateString).toISOString();
+self.referenceObjects = [{value: currentDate}];
+```
 
-4. Form layout with two select boxes, one for the start year and one for the end year. Year generator, generates years. Set start date and end date of our timeline.
+3. In the View, drop in a timeline component, copied and pasted from the Cookbook. 
+
+4. We will provide the erpData.json file, with local data in the component – local method and remote method. Show how to customize attributes of the timeline based on the data coming in – thumbnail and svg styling.
+
+5. Form layout with two select boxes, one for the start year and one for the end year. Year generator, generates years. Set start date and end date of our timeline.
 
 ### (c) Use Real Data
 
