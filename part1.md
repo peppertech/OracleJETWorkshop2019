@@ -75,7 +75,7 @@ After a few moments, you should see an empty page in the browser.
 
 3. Make sure you have a JavaScript editor. Simply using Notepad will not provide the syntax coloring and other JavaScript editor features you need. 
 
-## Develop the Web Component
+## Part 2: Develop the Web Component
 
 ### Create the Web Component
 
@@ -97,7 +97,7 @@ Go to index.html, items=[[dataProvider]], add a property in component.json file 
 
 In timeline Web Component ViewModel, read the data coming in from the consumer.
 
-## Integrate into Visual Builder
+## Part 3: Integrate into Visual Builder
 
 ### Set Up the Service Provider
 
