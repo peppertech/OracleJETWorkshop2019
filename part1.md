@@ -157,13 +157,34 @@ self.referenceObjects = [{value: currentDate}];
 
 4. In the browser, you should now see the Timeline scenario working and displaying data, exactly as shown in the [Single Series Timeline from the Oracle JET Cookbook](https://www.oracle.com/webfolder/technetwork/jet/jetCookbook.html?component=timeline&demo=basicTimeline).
 
-### (c) Customize the Timeline Component
+### (c) Receive the Data in an Attribute
+
+1. In the Web Component's 'component.json' file, add a property named 'items', as shown below. 
+
+```js #button { border: none; }
+"properties": {
+    "items": {
+      "type": "oj.DataProvider",
+      "description": "data items for the timeline series"
+    }
+},
+```
+
+**Note:** Use oj.DataProvider because...
+
+2. In the Web Component's 'my-invoice-timeline-viewModel.js' file...
+
+3. In the Web Component's 'my-invoice-timeline-viewModel.html' file...
+
+4. In the 'index.html' file...
+
+### (d) Customize the Timeline Component
 
 1. We provide [the erpData.json file](https://gist.github.com/peppertech/8a9691dc68b0a1466b0b7012b86e2578), with local data in the component – local method and remote method. Show how to customize attributes of the timeline based on the data coming in – thumbnail and svg styling.
 
 2. Form layout with two select boxes, one for the start year and one for the end year. Year generator, generates years. Set start date and end date of our timeline.
 
-### (d) Use Real Data
+### (e) Use Real Data
 
 1. The above works against local data. Create a connection to the data using an AJAX, using Basic authentication, so no getJSON, using an array data provider, to the real URL.
 
