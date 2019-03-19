@@ -282,6 +282,32 @@ ExampleComponentModel.prototype._extractArrayFromDataProvider =
   };
 ```
 
+Incorporate calls to the above in the earlier Prototype code:
+
+```js #button { border: none; }
+// Used for initialization of the data.
+ExampleComponentModel.prototype.bindingsApplied = function (context) {
+    var self = this;
+    self._extractArrayFromDataProvider(self.properties.items)
+            .then(function (transformedArray) {
+                self.items(transformedArray);
+            });
+};
+
+// Used to handle the use case where the dataProvider passed into the component changes at runtime.
+ExampleComponentModel.prototype.propertyChanged = function (context) {
+    var self = this;
+    if (context.property === 'items' && context.updatedFrom === 'external') {
+        self._extractArrayFromDataProvider(context.value)
+                .then(function (transformedArray) {
+                    self.items(transformedArray);
+                });
+    }
+};
+```
+
+The data that we're passing into the Web Component is already formatted in the structure that the Timeline component expects. This is almost never going to happen in reality. We will need to shape the data coming in from the REST Service to conform to the structure that the Timeline component expects.
+
 ### (e) Customize the Timeline Component
 
 1. We provide [the erpData.json file](https://gist.github.com/peppertech/8a9691dc68b0a1466b0b7012b86e2578), with local data in the component – local method and remote method. Show how to customize attributes of the timeline based on the data coming in – thumbnail and svg styling.
