@@ -1,6 +1,6 @@
 # Workshop: Develop a Web Component for Visual Builder Interaction with Oracle ERP
 This workshop shows how to create a Web Component for 
-use within an Oracle JET application or within Visual Builder, containing a JET Timeline component 
+use within an Oracle JET Core application or within Visual Builder, containing a JET Timeline component 
 that will read data from an Oracle ERP Service, showing invoice information.
 
 ## Part 1: Get Started
@@ -158,9 +158,50 @@ self.referenceObjects = [{value: currentDate}];
 
 4. In the browser, you should now see the Timeline scenario working and displaying data, exactly as shown in the [Single Series Timeline from the Oracle JET Cookbook](https://www.oracle.com/webfolder/technetwork/jet/jetCookbook.html?component=timeline&demo=basicTimeline).
 
-### (c) Receive the Data in an Attribute
+### (c) Best Practices for Web Component Development
 
-1. In the Web Component's 'component.json' file, add a property named 'items', as shown below. 
+Now that we have the basic Web Component working, let's talk about best practices in Web Components.
+
+1. Read [Best Practices for Web Component Creation](http://www.oracle.com/pls/topic/lookup?ctx=jetlatest&id=GUID-1A0A3469-AB57-4C0D-B1C7-FB49B5FBA0DF).
+
+2. In particular, read 'Expensive Initialization', about Web Components ideally carrying out minimum work inside the constructor function. The constructor is just for setting up the variables, doing basic set up, no data manipulating, no heavy lifting.
+
+3. Where we will do the more complex tasks and processing, will be done through a combination of lifecycle methods and custom Prototype methods.
+
+4. Since we want to keep the constructor as clean as possible for initiatilization, let's create our own Prototype methods and later get and shape data there, too, in 'my-invoice-timeline-viewModel.js'. There, add the following below the constructor.
+
+This is called one time and initialize data in your code:
+
+```js #button { border: none; }
+// Used for initialization of the data.
+ExampleComponentModel.prototype.bindingsApplied = function (context) {
+  var self = this;
+  self._extractArrayFromDataProvider(self.properties.items, self._shapeTimelineData, 10)
+  .then(function (transformedArray) {
+      self.items(transformedArray);
+      self.busyResolve();
+    });
+};
+```
+
+Called whenever items properties actually changed:
+
+```js #button { border: none; }
+// Used to handle the use case where the dataProvider passed into the component changes at runtime.
+ExampleComponentModel.prototype.propertyChanged = function (context) {
+  var self = this;
+  if (context.property === 'items' && context.updatedFrom ===
+    'external') {
+    self._extractArrayFromDataProvider(context.value, self._shapeTimelineData, 10)
+    .then(function (transformedArray) {
+        self.items(transformedArray);
+      });
+  }
+};
+```
+
+5. Next, read 'Access to External Data' in [Best Practices for Web Component Creation
+](https://docs.oracle.com/en/middleware/jet/6.1/develop/best-practices-web-component-creation.html#GUID-1A0A3469-AB57-4C0D-B1C7-FB49B5FBA0DF) and let's look at our properties. Let's set up an attribute for passing our data in from. To get started, in the Web Component's 'component.json' file, add a property named 'items', as shown below. 
 
 ```js #button { border: none; }
 "properties": {
@@ -170,22 +211,21 @@ self.referenceObjects = [{value: currentDate}];
     }
 },
 ```
+**Note:** We are going to pass in an array, but we're building these components in anticipation of wanting to use them in Visual Builder as well as in Oracle JET Core applications. We use 'oj.DataProvider' here because Visual Builder passes all data declaratively via a service data provider or an array data provider, both of which can be mapped to 'oj.DataProvider'.
 
-**Note:** Use oj.DataProvider because...
+6. In the Web Component's 'my-invoice-timeline-viewModel.js' file...
 
-2. In the Web Component's 'my-invoice-timeline-viewModel.js' file...
+7. In the Web Component's 'my-invoice-timeline-viewModel.html' file...
 
-3. In the Web Component's 'my-invoice-timeline-viewModel.html' file...
+8. In the 'index.html' file...
 
-4. In the 'index.html' file...
-
-### (d) Customize the Timeline Component
+### (e) Customize the Timeline Component
 
 1. We provide [the erpData.json file](https://gist.github.com/peppertech/8a9691dc68b0a1466b0b7012b86e2578), with local data in the component – local method and remote method. Show how to customize attributes of the timeline based on the data coming in – thumbnail and svg styling.
 
 2. Form layout with two select boxes, one for the start year and one for the end year. Year generator, generates years. Set start date and end date of our timeline.
 
-### (e) Use Real Data
+### (f) Use Real Data
 
 1. The above works against local data. Create a connection to the data using an AJAX, using Basic authentication, so no getJSON, using an array data provider, to the real URL.
 
