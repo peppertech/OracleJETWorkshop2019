@@ -355,9 +355,37 @@ ExampleComponentModel.prototype._shapeTimelineData = function (
 };
 ```
 
-### (f) Extend the User Interface
+2. In bindingsApplied and propertyChanged.
+
+Include self._shapeTimelineData, 10
+
+3. Put erpData.json in src/js/data
+
+4. New file, so new ojet serve.
+
+### (f) Add Advanced Features
 
 Form layout with two select boxes, one for the start year and one for the end year. Year generator, generates years. Set start date and end date of our timeline.
+
+<div id="container" class="oj-flex oj-flex-items-padding">
+    <oj-form-layout label-edge="top" max-columns="2" direction="row">
+        <oj-label id="startYearLbl" for="startYear" value="Start Year">Start Year
+        </oj-label>
+        <oj-select-one id="startYear" options="[[yearList]]" value="{{startYearValue}}">
+        </oj-select-one>
+        <oj-label id="endYearLbl" for="endYear" value="End Year">End Year
+        </oj-label>
+        <oj-select-one id="endYear" options="[[yearList]]" value="{{endYearValue}}">
+        </oj-select-one>
+    </oj-form-layout>
+</div>
+
+<oj-timeline id="tline" :aria-label="[[dynamicLabel]]" minor-axis='{
+             "scale": "years",
+             "zoomOrder": ["years", "months", "weeks", "days"]
+             }' major-axis.scale="quarters" start="[[startDate]]" viewport-start="[[startDate]]" end="[[endDate]]" viewport-end="[[endDate]]" selection-mode="single"
+             selection="[[itemSelection]]" series="[[timelineSeries]]" style="width:100%;min-height:350px">
+</oj-timeline>
 
 ### (g) Use Real Data
 
