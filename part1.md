@@ -227,32 +227,60 @@ Reference the 'dataArray' as the value of the 'items' attribute in the 'index.ht
 ```js #button { border: none; }
 // Used for initialization of the data.
 ExampleComponentModel.prototype.bindingsApplied = function (context) {
-  var self = this;
-  self._extractArrayFromDataProvider(self.properties.items, self._shapeTimelineData, 10)
-  .then(function (transformedArray) {
-      self.items(transformedArray);
-      self.busyResolve();
-    });
+    var self = this;
+    self.items(self.properties.items);
 };
-```
 
-Called whenever items properties actually changed:
-
-```js #button { border: none; }
 // Used to handle the use case where the dataProvider passed into the component changes at runtime.
 ExampleComponentModel.prototype.propertyChanged = function (context) {
-  var self = this;
-  if (context.property === 'items' && context.updatedFrom ===
-    'external') {
-    self._extractArrayFromDataProvider(context.value, self._shapeTimelineData, 10)
-    .then(function (transformedArray) {
-        self.items(transformedArray);
-      });
-  }
+    var self = this;
+    if (context.property === 'items' && context.updatedFrom === 'external') {
+        self.items(self.properties.items);
+    }
 };
 ```
+4. If you run this, you will see no data displayed. If we debug, and look to see what the value of 'self.properties.items' is, inside the 'propertyChanged' function above, we will find that 'items' is a DataProvider object. The Timeline component expects an array, in a specific format. Let's create a Prootype function that extracts the array data from the DataProvider.
 
-8. In the 'index.html' file...
+```js #button { border: none; }
+ExampleComponentModel.prototype._extractArrayFromDataProvider =
+  function (dataProvider, rowTransformer, rowLimit) {
+    var self = this;
+    return new Promise(function (resolve) {
+      var limit = rowLimit ? rowLimit : 20;
+      if (dataProvider) {
+        var options = {
+          size: limit
+        };
+
+        // If a transformation callback function was provided, return true.
+        var doTransform = (typeof rowTransformer ===
+          'function');
+
+        // return the data from the DataProvider
+        var dpIterator = dataProvider.fetchFirst(options)[Symbol.asyncIterator]
+          ();
+
+        // iterate through the data and build the array of data for the timeline.
+        dpIterator.next().then(function (result) {
+          var extractedArray = [];
+          if (result.value.data && result.value.data.length > 0) {
+            result.value.data.forEach(function (row, index,
+              allArray) {
+              extractedArray.push(doTransform ?
+                rowTransformer(row) :
+                row);
+            });
+          }
+            self.emptyTextMessage('No data available');
+          resolve(extractedArray)
+        });
+      }
+      else {
+        resolve([]);
+      }
+    });
+  };
+```
 
 ### (e) Customize the Timeline Component
 
