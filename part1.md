@@ -139,7 +139,8 @@ self.referenceObjects = [{value: currentDate}];
 3. In the View, that is, the 'my-invoice-timeline-view.html' file, delete all the existing content, and drop in a Timeline component, here it is copied and pasted directly from the [Single Series Timeline from the Oracle JET Cookbook](https://www.oracle.com/webfolder/technetwork/jet/jetCookbook.html?component=timeline&demo=basicTimeline).
 
 ```html #button { border: none; }
-<oj-timeline id='tline' data-bind='attr: {"aria-label": "Single Series Timeline Demo. Current date is " + currentDateString}'
+<oj-timeline id='tline' 
+             :aria-label="[['Single Series Timeline Demo. Current date is ' + currentDateString()]]"
              minor-axis='{
                "scale": "weeks",
                "zoomOrder": ["months", "weeks", "days"]
