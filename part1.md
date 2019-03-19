@@ -308,13 +308,58 @@ ExampleComponentModel.prototype.propertyChanged = function (context) {
 
 The data that we're passing into the Web Component is already formatted in the structure that the Timeline component expects. This is almost never going to happen in reality. We will need to shape the data coming in from the REST Service to conform to the structure that the Timeline component expects.
 
-### (e) Customize the Timeline Component
+### (e) Shaping External Data
 
 1. We provide [the erpData.json file](https://gist.github.com/peppertech/8a9691dc68b0a1466b0b7012b86e2578), with local data in the component – local method and remote method. Show how to customize attributes of the timeline based on the data coming in – thumbnail and svg styling.
 
-2. Form layout with two select boxes, one for the start year and one for the end year. Year generator, generates years. Set start date and end date of our timeline.
+```js #button { border: none; }
+// mapping the data from the REST service into a format that the timeline expects.
+// Also setting special styles and thumbnail images based on specific values in the data.
+ExampleComponentModel.prototype._shapeTimelineData = function (
+  sourceRow) {
 
-### (f) Use Real Data
+  // change the border style and thumbnail color based on type of payment method
+  var invoicePaymentMethod = {
+    Check: {
+      color: 'green',
+      img: require.toUrl('my-timeline/resources/images/box_01.png')
+    },
+    Electronic: {
+      color: 'red',
+      img: require.toUrl('my-timeline/resources/images/box_02.png')
+    }
+  }
+
+  // Alternate option, changes the style and thumbnail based on invoice type.
+  var invoiceTypeDetails = {
+    Standard: {
+      color: 'green',
+      img: require.toUrl('my-timeline/resources/images/box_01.png')
+    },
+    Special: {
+      color: 'red',
+      img: require.toUrl('my-timeline/resources/images/box_02.png')
+    }
+  }
+  return {
+    id: sourceRow.InvoiceId,
+    title: sourceRow.InvoiceNumber,
+    start: sourceRow.CreationDate,
+    description: sourceRow.Description,
+    thumbnail: invoicePaymentMethod[sourceRow.PaymentMethod]
+      .img,
+    svgStyle: 'border-color:' +
+      invoicePaymentMethod[sourceRow.PaymentMethod].color +
+      ';'
+  };
+};
+```
+
+### (f) Extend the User Interface
+
+Form layout with two select boxes, one for the start year and one for the end year. Year generator, generates years. Set start date and end date of our timeline.
+
+### (g) Use Real Data
 
 1. The above works against local data. Create a connection to the data using an AJAX, using Basic authentication, so no getJSON, using an array data provider, to the real URL.
 
