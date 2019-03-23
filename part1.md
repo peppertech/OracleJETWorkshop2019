@@ -203,6 +203,7 @@ ExampleComponentModel.prototype.propertyChanged = function (context) {
 
 2. In the containing application's 'appControler.js' file, i.e., 'src/js/appControler.js', pull in the data that you're going to pass into the component:
 
+```js #button { border: none; }
 self.dataArray = ko.observable();
 
 var url = "/js/data/seriesOneData.json";
@@ -211,18 +212,17 @@ $.getJSON(url).then(function (results) {
     // assign the DataProvider to the self.dataArray observable
     self.dataArray(new ArrayDataProvider(results, {keyAttributes: 'id'}));
 })
+```
 
-, 'ojs/ojarraydataprovider'
+**Note:** For the above to work, in particular, the 'ArrayDataProvider' reference, make sure to include 'ojs/ojarraydataprovider' at the end of the 'define' blick in 'appControler.js'.
 
-ArrayDataProvider
+3. The Web Component will not pull in its own data, instead, it will handle the data that is passed into it. You will more than likely have multiple usages of your Web Component, so that the data needs to come from the outside, that is, from the containing application. Therefore, reference 'dataArray' as the value of the 'items' attribute in the 'index.html' file, as follows:
 
-The component will not pull in its own data, instead, it handles the data that is passed to it. You may have multiple instances of your component, so the data needs to come from the outside, i.e., from the containing application.
-
-Reference the 'dataArray' as the value of the 'items' attribute in the 'index.html' file:
-
+```html #button { border: none; }
 <my-invoice-timeline id='myinvoicetimeline' items="[[dataArray]]"></my-invoice-timeline>
+```
 
-3. In the Web Component's 'my-invoice-timeline-viewModel.js' file, since we want to keep the constructor as clean as possible for initiatilization, as discussed in the previous section, we will now use a combination of our own Prototype methods and later get and shape data there, too, in 'my-invoice-timeline-viewModel.js', after the constructor: 
+4. In the Web Component's 'my-invoice-timeline-viewModel.js' file, since we want to keep the constructor as clean as possible for initiatilization, as discussed in the previous section, we will now use a combination of our own Prototype methods and later get and shape data there, too, in 'my-invoice-timeline-viewModel.js', after the constructor: 
 
 ```js #button { border: none; }
 // Used for initialization of the data.
@@ -239,7 +239,7 @@ ExampleComponentModel.prototype.propertyChanged = function (context) {
     }
 };
 ```
-4. If you run this, you will see no data displayed. If we debug, and look to see what the value of 'self.properties.items' is, inside the 'propertyChanged' function above, we will find that 'items' is a DataProvider object. The Timeline component expects an array, in a specific format. Let's create a Prootype function that extracts the array data from the DataProvider.
+5. If you run this, you will see no data displayed. If we debug, and look to see what the value of 'self.properties.items' is, inside the 'propertyChanged' function above, we will find that 'items' is a 'DataProvider' object. The Timeline component expects an array, in a specific format. Let's therefore create a Prootype function that extracts the array data from the DataProvider.
 
 ```js #button { border: none; }
 ExampleComponentModel.prototype._extractArrayFromDataProvider =
