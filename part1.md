@@ -251,15 +251,10 @@ ExampleComponentModel.prototype._extractArrayFromDataProvider =
         var options = {
           size: limit
         };
-
         // If a transformation callback function was provided, return true.
-        var doTransform = (typeof rowTransformer ===
-          'function');
-
+        var doTransform = (typeof rowTransformer === 'function');
         // return the data from the DataProvider
-        var dpIterator = dataProvider.fetchFirst(options)[Symbol.asyncIterator]
-          ();
-
+        var dpIterator = dataProvider.fetchFirst(options)[Symbol.asyncIterator]();
         // iterate through the data and build the array of data for the timeline.
         dpIterator.next().then(function (result) {
           var extractedArray = [];
@@ -271,7 +266,7 @@ ExampleComponentModel.prototype._extractArrayFromDataProvider =
                 row);
             });
           }
-            self.emptyTextMessage('No data available');
+          self.emptyTextMessage('No data available');
           resolve(extractedArray)
         });
       }
@@ -314,10 +309,8 @@ The data that we're passing into the Web Component is already formatted in the s
 
 ```js #button { border: none; }
 // mapping the data from the REST service into a format that the timeline expects.
-// Also setting special styles and thumbnail images based on specific values in the data.
-ExampleComponentModel.prototype._shapeTimelineData = function (
-  sourceRow) {
-
+// Also, setting special styles and thumbnail images based on specific values in the data.
+ExampleComponentModel.prototype._shapeTimelineData = function (sourceRow) {
   // change the border style and thumbnail color based on type of payment method
   var invoicePaymentMethod = {
     Check: {
@@ -329,7 +322,6 @@ ExampleComponentModel.prototype._shapeTimelineData = function (
       img: require.toUrl('my-timeline/resources/images/box_02.png')
     }
   }
-
   // Alternate option, changes the style and thumbnail based on invoice type.
   var invoiceTypeDetails = {
     Standard: {
@@ -346,11 +338,8 @@ ExampleComponentModel.prototype._shapeTimelineData = function (
     title: sourceRow.InvoiceNumber,
     start: sourceRow.CreationDate,
     description: sourceRow.Description,
-    thumbnail: invoicePaymentMethod[sourceRow.PaymentMethod]
-      .img,
-    svgStyle: 'border-color:' +
-      invoicePaymentMethod[sourceRow.PaymentMethod].color +
-      ';'
+    thumbnail: invoicePaymentMethod[sourceRow.PaymentMethod].img,
+    svgStyle: 'border-color:' + invoicePaymentMethod[sourceRow.PaymentMethod].color + ';'
   };
 };
 ```
