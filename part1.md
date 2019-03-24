@@ -175,7 +175,13 @@ self.referenceObjects = [{value: currentDate}];
 ```
 5. For the above to work, in particular, for the Timeline component to be loaded, make sure to include 'ojs/ojtimeline' at the end of the 'define' block in 'appControler.js'.
 
-6. In the browser, check that you now see the Timeline scenario working and displaying data, exactly as shown in the [Single Series Timeline from the Oracle JET Cookbook](https://www.oracle.com/webfolder/technetwork/jet/jetCookbook.html?component=timeline&demo=basicTimeline).
+6. In the browser, check that you now see the Timeline scenario working and displaying data, exactly as shown in the [Single Series Timeline from the Oracle JET Cookbook](https://www.oracle.com/webfolder/technetwork/jet/jetCookbook.html?component=timeline&demo=basicTimeline), and as shown below:
+
+<table><tr><td>   
+<img src="images/pic-005.png" alt="alt text" width="500" height="305">
+</td></tr></table>
+
+**Note:** As in the previous section, since you created a new file, i.e., 'data/data.json' above, you need to kill the 'ojet' process and run 'ojet serve' again to serve the application.
 
 ### (c) Understand Best Practices for Web Component Development
 
