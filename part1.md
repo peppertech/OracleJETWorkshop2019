@@ -71,9 +71,13 @@ ojet create BasicApp --template=basic
 ojet serve
 ```
 
-After a few moments, you should see an empty page in the browser.
+After a few moments, you should see an empty page in the browser:
 
-3. Make sure you have a JavaScript editor. Simply using Notepad will not provide the syntax coloring and other JavaScript editor features you need. 
+<table><tr><td>   
+<img src="images/pic-001.png" alt="alt text" width="500" height="420">
+</td></tr></table>
+
+**Note:** Make sure you have a JavaScript editor and open the sources created in step 1 above. Simply using Notepad will not provide the syntax coloring and other JavaScript editor features you need. 
 
 ## Part 2: Develop the Web Component
 
