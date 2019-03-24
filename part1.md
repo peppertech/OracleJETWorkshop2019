@@ -81,14 +81,13 @@ In the Terminal window, first kill the 'ojet' process, using Ctrl-C. This is bec
 
 ### (a) Creating a Web Component
 
-1. In the root of your project, run the following:
+1. In the root of your project, run the following command line, **after** reading the note below:
+
+**Note:** Instaed of the 'my-' prefix below, use your initials or use your company prefix, to make your Web Component unique and not conflict with others. Remember to never use 'oj-' as prefix, which is reserved for the Oracle JET team.
 
 ```js #button { border: none; }
 ojet create component my-invoice-timeline
 ```
-
-**Note:** Instaed of the 'my-' prefix, use your initials or use your company prefix, to make your Web Component unique and not conflict with others. Remember to never use 'oj-' as prefix, which is reserved for the Oracle JET team.
-
 2. Take a look at your source structure, find the new 'my-invoice-timeline' Web Component, in the 'src/js/jet-composites' folder, and explore its structure. In particular, notice that the message 'Hello from Example Component' is defined in 'my-invoice-timeline-viewModel.js' and rendered in 'my-invoice-timeline-viewModel.html'.
 
 
