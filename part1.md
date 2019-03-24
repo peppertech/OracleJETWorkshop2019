@@ -113,9 +113,13 @@ define(['ojs/ojcore', 'knockout', 'ojs/ojknockout', 'my-invoice-timeline/loader'
 <my-invoice-timeline></my-invoice-timeline>
 ```
 
-6. Run 'ojet serve' in the Terminal again, and notice that you now see two instances of the 'Hello from Example Component' message from the 'my-invoice-timeline' Web Component.
+6. Run 'ojet serve' in the Terminal again, and notice that you now see two instances of the 'Hello from Example Component' message from the 'my-invoice-timeline' Web Component, as shown below:
 
-**Note:** Remember that you need to run 'ojet serve' to serve the application, since you killed the 'ojet' process in step 1 of this section.
+<table><tr><td>   
+<img src="images/pic-003.png" alt="alt text" width="500" height="304">
+</td></tr></table>
+
+**Note:** As stated above, you needed to run 'ojet serve' to serve the application, since you killed the 'ojet' process in step 1 of this section.
 
 ### (b) Set Up a Timeline Component from the Cookbook
 
