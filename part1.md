@@ -74,7 +74,7 @@ ojet serve
 After a few moments, you should see an empty page in the browser:
 
 <table><tr><td>   
-<img src="images/pic-001.png" alt="alt text" width="500" height="420">
+<img src="images/pic-001.png" alt="alt text" width="500" height="304">
 </td></tr></table>
 
 **Note:** Make sure you have a JavaScript editor and open the sources created in step 1 above. Simply using Notepad will not provide the syntax coloring and other JavaScript editor features you need. 
