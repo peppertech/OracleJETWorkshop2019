@@ -92,8 +92,13 @@ In the Terminal window, first kill the 'ojet' process, using Ctrl-C. This is bec
 ```js #button { border: none; }
 ojet create component my-invoice-timeline
 ```
-2. Take a look at your source structure, find the new 'my-invoice-timeline' Web Component, in the 'src/js/jet-composites' folder, and explore its structure. In particular, notice that the message 'Hello from Example Component' is defined in 'my-invoice-timeline-viewModel.js' and rendered in 'my-invoice-timeline-viewModel.html'.
+2. Take a look at your source structure, as shown below:
 
+<table><tr><td>   
+<img src="images/pic-002.png" alt="alt text" width="500" height="703">
+</td></tr></table>
+
+Find the new 'my-invoice-timeline' Web Component, in the 'src/js/jet-composites' folder, and explore its structure. In particular, notice that the message 'Hello from Example Component' is defined in 'my-invoice-timeline-viewModel.js' and rendered in 'my-invoice-timeline-viewModel.html'.
 
 3. Load the loader, i.e., 'my-invoice-timeline/loader', at the end of the dependency list passed into the define() call of the 'src/js/appControler.js', as shown below:
 
