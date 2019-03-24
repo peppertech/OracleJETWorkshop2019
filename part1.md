@@ -92,28 +92,28 @@ In the Terminal window, first kill the 'ojet' process, using Ctrl-C. This is bec
 ```js #button { border: none; }
 ojet create component my-invoice-timeline
 ```
-2. Take a look at your source structure, as shown below:
+2. Take a look at your source structure. Find the new 'my-invoice-timeline' Web Component, in the 'src/js/jet-composites' folder, and explore its structure, as shown below.
 
 <table><tr><td>   
 <img src="images/pic-002.png" alt="alt text" width="500" height="703">
 </td></tr></table>
 
-Find the new 'my-invoice-timeline' Web Component, in the 'src/js/jet-composites' folder, and explore its structure. In particular, notice that the message 'Hello from Example Component' is defined in 'my-invoice-timeline-viewModel.js' and rendered in 'my-invoice-timeline-viewModel.html'.
+3. Open the files in the 'my-invoice-timeline' Web Component. In particular, notice that the demo message 'Hello from Example Component' is defined in 'my-invoice-timeline-viewModel.js', while it is rendered in 'my-invoice-timeline-viewModel.html'.
 
-3. Load the loader, i.e., 'my-invoice-timeline/loader', at the end of the dependency list passed into the define() call of the 'src/js/appControler.js', as shown below:
+4. Load the loader, i.e., 'my-invoice-timeline/loader', at the end of the dependency list passed into the define() call of the 'src/js/appControler.js', as shown below:
 
 ```js #button { border: none; }
 define(['ojs/ojcore', 'knockout', 'ojs/ojknockout', 'my-invoice-timeline/loader'],
 ```
 
-4. Use the 'my-invoice-timeline' custom element a few times in 'index.html', as shown below, **within the 'div' that has its role set to 'main'**.
+5. Use the 'my-invoice-timeline' custom element a few times in 'index.html', as shown below, **within the 'div' that has its role set to 'main'**.
 
 ```html #button { border: none; }
 <my-invoice-timeline></my-invoice-timeline>
 <my-invoice-timeline></my-invoice-timeline>
 ```
 
-5. Run 'ojet serve' in the Terminal again, and notice that you now see two instances of the 'Hello from Example Component' message from the 'my-invoice-timeline' Web Component.
+6. Run 'ojet serve' in the Terminal again, and notice that you now see two instances of the 'Hello from Example Component' message from the 'my-invoice-timeline' Web Component.
 
 **Note:** Remember that you need to run 'ojet serve' to serve the application, since you killed the 'ojet' process in step 1 of this section.
 
