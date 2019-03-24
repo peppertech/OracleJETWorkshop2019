@@ -131,7 +131,7 @@ We are going to take the [Single Series Timeline from the Oracle JET Cookbook](h
 <img src="images/pic-004.png" alt="alt text" width="500" height="494">
 </td></tr></table>
 
-2. Load the 'data.json' file into your Web Component by using the 'text!' protocol, as shown below in the 'my-invoice-timeline-viewModel.js' file. Next, make sure to reference the 'data.json' file in the callback function as 'data', for example, shown below, in the same order as in the define statement:
+2. Load the 'data.json' file into your Web Component by using the 'text!' protocol, as shown below, in the 'my-invoice-timeline-viewModel.js' file. In addition, make sure to reference the 'data.json' file in the callback function, as 'data', for example, shown below, in the same order as in the define statement:
 
 ```js #button { border: none; }
 define(
@@ -141,7 +141,7 @@ define(
         function (ko, data, $, componentStrings) {
 ```
         
-4. In the 'my-invoice-timeline-viewModel.js' file, replace the example variable 'self.messageText' with the following content, which is copied directly from the  [Single Series Timeline from the Oracle JET Cookbook](https://www.oracle.com/webfolder/technetwork/jet/jetCookbook.html?component=timeline&demo=basicTimeline), with the 'data' passed in from the step above into the 'items' variable:
+3. In the 'my-invoice-timeline-viewModel.js' file, replace the example variable 'self.messageText' with the following content, which is copied directly from the  [Single Series Timeline from the Oracle JET Cookbook](https://www.oracle.com/webfolder/technetwork/jet/jetCookbook.html?component=timeline&demo=basicTimeline), with the 'data' passed in from the step above into the 'items' variable:
 
 ```js #button { border: none; }
 var items = ko.observableArray(JSON.parse(data));
@@ -154,7 +154,7 @@ var currentDate = new Date(self.currentDateString).toISOString();
 self.referenceObjects = [{value: currentDate}];
 ```
 
-5. In the View, that is, the 'my-invoice-timeline-view.html' file, delete all the existing content, and drop in a Timeline component, here it is copied and pasted directly from the [Single Series Timeline from the Oracle JET Cookbook](https://www.oracle.com/webfolder/technetwork/jet/jetCookbook.html?component=timeline&demo=basicTimeline).
+4. In the View, that is, the 'my-invoice-timeline-view.html' file, delete all the existing content, and drop in a Timeline component, here it is copied and pasted directly from the [Single Series Timeline from the Oracle JET Cookbook](https://www.oracle.com/webfolder/technetwork/jet/jetCookbook.html?component=timeline&demo=basicTimeline).
 
 ```html #button { border: none; }
 <oj-timeline id='tline' 
@@ -174,7 +174,7 @@ self.referenceObjects = [{value: currentDate}];
 </oj-timeline>
 ```
 
-6. In the browser, check that you now see the Timeline scenario working and displaying data, exactly as shown in the [Single Series Timeline from the Oracle JET Cookbook](https://www.oracle.com/webfolder/technetwork/jet/jetCookbook.html?component=timeline&demo=basicTimeline).
+5. In the browser, check that you now see the Timeline scenario working and displaying data, exactly as shown in the [Single Series Timeline from the Oracle JET Cookbook](https://www.oracle.com/webfolder/technetwork/jet/jetCookbook.html?component=timeline&demo=basicTimeline).
 
 ### (c) Understand Best Practices for Web Component Development
 
