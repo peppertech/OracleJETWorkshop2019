@@ -136,7 +136,7 @@ We are going to take the [Single Series Timeline from the Oracle JET Cookbook](h
 ```js #button { border: none; }
 define(
     ['knockout', 
-     'text!./data/seriesOneData.json', 
+     'text!./data/data.json', 
      'jquery', 'ojL10n!./resources/nls/my-invoice-timeline-strings'], 
         function (ko, data, $, componentStrings) {
 ```
