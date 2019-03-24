@@ -255,7 +255,7 @@ $.getJSON(url).then(function (results) {
 <my-invoice-timeline id='myinvoicetimeline' items="[[dataArray]]"></my-invoice-timeline>
 ```
 
-6. In the Web Component's 'my-invoice-timeline-viewModel.js' file, since we want to keep the constructor as clean as possible for initiatilization, as discussed in the previous section, we will now use a combination of our own Prototype methods and later get and shape data there, too, in 'my-invoice-timeline-viewModel.js', after the constructor: 
+6. In the Web Component's 'my-invoice-timeline-viewModel.js' file, since we want to keep the constructor as clean as possible for initialization, as discussed in the previous section, we will now use a combination of our own Prototype methods and later get and shape data there, too, in 'my-invoice-timeline-viewModel.js', after the constructor: 
 
 ```js #button { border: none; }
 // Used for initialization of the data.
