@@ -125,7 +125,7 @@ define(['ojs/ojcore', 'knockout', 'ojs/ojknockout', 'my-invoice-timeline/loader'
 
 We are going to take the [Single Series Timeline from the Oracle JET Cookbook](https://www.oracle.com/webfolder/technetwork/jet/jetCookbook.html?component=timeline&demo=basicTimeline) as a starting point and then customize it to our requirements in subsequent sections.
 
-1. Put [this static data](https://gist.github.com/peppertech/52bee52327ae9a1c0958559da78508a8) into a file named 'data.json', in a new folder named 'data', in the 'src/js/jet-composites/my-invoice-timeline' folder, as shown below:
+1. Put [this static data](https://gist.githubusercontent.com/peppertech/52bee52327ae9a1c0958559da78508a8/raw/61e68f85f5e83fd4cf70361d11840f65d522e337/seriesOneData.json) into a file named 'data.json', in a new folder named 'data', in the 'src/js/jet-composites/my-invoice-timeline' folder, as shown below:
 
 <table><tr><td>   
 <img src="images/pic-004.png" alt="alt text" width="500" height="494">
