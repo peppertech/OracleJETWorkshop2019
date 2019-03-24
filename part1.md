@@ -106,7 +106,7 @@ ojet create component my-invoice-timeline
 define(['ojs/ojcore', 'knockout', 'ojs/ojknockout', 'my-invoice-timeline/loader'],
 ```
 
-5. Use the 'my-invoice-timeline' custom element a few times in 'index.html', as shown below, **within the 'div' that has its role set to 'main'**.
+5. Use the 'my-invoice-timeline' custom element a few times in 'index.html', as shown below, **and put them within the 'div' that has its role set to 'main'**.
 
 ```html #button { border: none; }
 <my-invoice-timeline></my-invoice-timeline>
