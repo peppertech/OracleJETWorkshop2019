@@ -83,7 +83,7 @@ In the Terminal window, first kill the 'ojet' process, using Ctrl-C. This is bec
 
 1. In the root of your project, run the following command line, **after** reading the note below:
 
-**Note:** Instaed of the 'my-' prefix below, use your initials or use your company prefix, to make your Web Component unique and not conflict with others. Remember to never use 'oj-' as prefix, which is reserved for the Oracle JET team.
+**Note:** Instead of the 'my-' prefix in the command line below, **use your initials or use your company prefix**, to make your Web Component unique and not conflict with others. Remember to never use 'oj-' as prefix, which is reserved for the Oracle JET team.
 
 ```js #button { border: none; }
 ojet create component my-invoice-timeline
