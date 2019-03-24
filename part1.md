@@ -213,18 +213,13 @@ ExampleComponentModel.prototype.propertyChanged = function (context) {
 
 ### (d) Use External Data
 
-1. Read 'Access to External Data' in [Best Practices for Web Component Creation
-](https://docs.oracle.com/en/middleware/jet/6.1/develop/best-practices-web-component-creation.html#GUID-1A0A3469-AB57-4C0D-B1C7-FB49B5FBA0DF) and let's look at our properties. Let's set up an attribute for passing our data in from. To get started, in the Web Component's 'component.json' file, add a property named 'items', as shown below. 
+Rather than providing a Web Component together with its own data, we want to be able to pass in data from outside the Web Component. In this section, as an intermediate step, we will move the 'data.json' file outside the Web Component, while in subsequent sections we will access it via a REST endpoint.
 
-```js #button { border: none; }
-"properties": {
-    "items": {
-      "type": "oj.DataProvider",
-      "description": "data items for the timeline series"
-    }
-},
-```
-**Note:** We are going to pass in an array, but we're building these components in anticipation of wanting to use them in Visual Builder as well as in Oracle JET Core applications. We use 'oj.DataProvider' here because Visual Builder passes all data declaratively via a service data provider or an array data provider, both of which can be mapped to 'oj.DataProvider'.
+1. Move the 'data.json' file into a folder outside the Web Component, that is, a new folder in 'src/js', named 'data', as shown below:
+
+<table><tr><td>   
+<img src="images/pic-006.png" alt="alt text" width="500" height="484">
+</td></tr></table>
 
 2. In the containing application's 'appControler.js' file, i.e., 'src/js/appControler.js', pull in the data that you're going to pass into the component:
 
@@ -241,13 +236,26 @@ $.getJSON(url).then(function (results) {
 
 3. For the above to work, in particular, the 'ArrayDataProvider' reference, make sure to include 'ojs/ojarraydataprovider' at the end of the 'define' block in 'appControler.js'.
 
-4. The Web Component will not pull in its own data, instead, it will handle the data that is passed into it. You will more than likely have multiple usages of your Web Component, so that the data needs to come from the outside, that is, from the containing application. Therefore, reference 'dataArray' as the value of the 'items' attribute in the 'index.html' file, as follows:
+4. Read 'Access to External Data' in [Best Practices for Web Component Creation
+](https://docs.oracle.com/en/middleware/jet/6.1/develop/best-practices-web-component-creation.html#GUID-1A0A3469-AB57-4C0D-B1C7-FB49B5FBA0DF) and let's look at our properties. Let's set up an attribute for passing our data in from. To get started, in the Web Component's 'component.json' file, add a property named 'items', as shown below. 
+
+```js #button { border: none; }
+"properties": {
+    "items": {
+      "type": "oj.DataProvider",
+      "description": "data items for the timeline series"
+    }
+},
+```
+**Note:** We are going to pass in an array, but we're building these components in anticipation of wanting to use them in Visual Builder as well as in Oracle JET Core applications. We use 'oj.DataProvider' here because Visual Builder passes all data declaratively via a service data provider or an array data provider, both of which can be mapped to 'oj.DataProvider'.
+
+5. The Web Component will not pull in its own data, instead, it will handle the data that is passed into it. You will more than likely have multiple usages of your Web Component, so that the data needs to come from the outside, that is, from the containing application. Therefore, reference 'dataArray' as the value of the 'items' attribute in the 'index.html' file, as follows:
 
 ```html #button { border: none; }
 <my-invoice-timeline id='myinvoicetimeline' items="[[dataArray]]"></my-invoice-timeline>
 ```
 
-5. In the Web Component's 'my-invoice-timeline-viewModel.js' file, since we want to keep the constructor as clean as possible for initiatilization, as discussed in the previous section, we will now use a combination of our own Prototype methods and later get and shape data there, too, in 'my-invoice-timeline-viewModel.js', after the constructor: 
+6. In the Web Component's 'my-invoice-timeline-viewModel.js' file, since we want to keep the constructor as clean as possible for initiatilization, as discussed in the previous section, we will now use a combination of our own Prototype methods and later get and shape data there, too, in 'my-invoice-timeline-viewModel.js', after the constructor: 
 
 ```js #button { border: none; }
 // Used for initialization of the data.
@@ -264,7 +272,7 @@ ExampleComponentModel.prototype.propertyChanged = function (context) {
     }
 };
 ```
-6. If you run this, you will see no data displayed. If we debug, and look to see what the value of 'self.properties.items' is, inside the 'propertyChanged' function above, we will find that 'items' is a 'DataProvider' object. The Timeline component expects an array, in a specific format. Let's therefore create a Prootype function that extracts the array data from the DataProvider.
+7. If you run this, you will see no data displayed. If we debug, and look to see what the value of 'self.properties.items' is, inside the 'propertyChanged' function above, we will find that 'items' is a 'DataProvider' object. The Timeline component expects an array, in a specific format. Let's therefore create a Prootype function that extracts the array data from the DataProvider.
 
 ```js #button { border: none; }
 ExampleComponentModel.prototype._extractArrayFromDataProvider =
