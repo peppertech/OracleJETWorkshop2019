@@ -3,7 +3,7 @@ This workshop shows how to create a Web Component for
 use within an Oracle JET Core application or within Visual Builder, containing a JET Timeline component 
 that will read data from an Oracle ERP Service, showing invoice information.
 
-## Part 1: Get Started
+## 1: Get Started
 
 All the activities in this section should be done on the command line in a Terminal window.
 
@@ -79,7 +79,7 @@ After a few moments, you should see an empty page in the browser:
 
 **Note:** Make sure you have a JavaScript editor, such as Visual Studio or Apache NetBeans, and open the sources created in step 1 above. Simply using Notepad will not provide the syntax coloring and other JavaScript editor features you need. 
 
-## Part 2: Develop the Web Component
+## 2: Develop the Web Component
 
 In the Terminal window, first kill the 'ojet' process, using Ctrl-C. This is because you will be adding new files in this section. Whenever you add new files, first kill the 'ojet' process in the Terminal window, using Ctrl-C, and then, after creating new files as in step 2 below, restart the 'ojet' process via 'ojet serve'. The 'watch' process, provided by 'ojet', will only look for changes to existing files; it will not build and re-serve new files.
 
@@ -585,7 +585,7 @@ var PASSWORD = 'to be provided by your instructor';
 <img src="images/pic-010.png" alt="alt text" width="500" height="283">
 </td></tr></table>
 
-## Part 3: Integrate into Visual Builder
+## 3: Integrate into Visual Builder
 
 The Web Component functions correctly and provides real data in our Oracle JET Core application. Let's now integrate it into Visual Builder so that it can be used there, too.
 
