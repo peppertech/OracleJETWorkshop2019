@@ -260,7 +260,7 @@ Two lines below the above, make sure to change the reference to 'items' to the f
 
 ```js #button { border: none; }
 self.items()
-```js #button { border: none; }
+```
 
 5. Read 'Access to External Data' in [Best Practices for Web Component Creation
 ](https://docs.oracle.com/en/middleware/jet/6.1/develop/best-practices-web-component-creation.html#GUID-1A0A3469-AB57-4C0D-B1C7-FB49B5FBA0DF) and let's look at our properties. Let's set up an attribute for passing our data in from. To get started, in the Web Component's 'component.json' file, add a property named 'items', as shown below. 
