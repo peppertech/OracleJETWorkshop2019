@@ -496,6 +496,10 @@ Form layout with two select boxes, one for the start year and one for the end ye
 
 4. In the browser, ...
 
+<table><tr><td>   
+<img src="images/pic-010.png" alt="alt text" width="500" height="283">
+</td></tr></table>
+
 ### (g) Use Real Data
 
 1. The above works against local data. Create a connection to the data using an AJAX, using Basic authentication, so no getJSON, using an array data provider, to the real URL.
