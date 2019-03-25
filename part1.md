@@ -553,7 +553,24 @@ self._generateYears();
 
 ### (g) Use Real Data
 
-1. The above works against local data. Create a connection to the data using an AJAX, using Basic authentication, so no getJSON, using an array data provider, to the real URL.
+In the previous section, you were working against local data. Now, we're going to get our data from a demo ERP service.
+
+1. Start by creating a connection to the data using an AJAX call, with Basic authentication, so no getJSON, using an ArrayDataProvider, to the real URL.
+
+```js #button { border: none; }
+$.ajax
+({
+  type: "GET",
+  url: "https://ucf1-ecst-fa-ext.oracledemos.com/fscmRestApi/resources/11.13.18.05/invoices?onlyData=true&limit=50",
+  dataType: 'json',
+  headers: {
+    "Authorization": "Basic " + btoa(USERNAME + ":" + PASSWORD)
+  },
+  success: function (results) {
+      self.dataProvider(new ArrayDataProvider(results.items, { keyAttributes: 'invoiceId' }));
+  }
+});
+```
 
 2. Go to index.html, items=[[dataProvider]], add a property in component.json file called 'items', type 'oj.DataProvider', displayName and description must be changed as well for Visual Builder.
 
