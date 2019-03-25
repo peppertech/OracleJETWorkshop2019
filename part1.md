@@ -579,14 +579,7 @@ var USERNAME = 'to be provided by your instructor';
 var PASSWORD = 'to be provided by your instructor';
 ```
 
-2. Since the aim of this workshop is to integrate your Web Component with Visual Builder, it is important that you set the display name and description of the Web Component to something relevant since these values will be used in Visual Builder when you upload the Web Component. Therefore, in the 'component.json' file of the Web Component, set the displayName and description as follows:
-
-```js #button { border: none; }
-  "displayName": "Invoice Timeline.",
-  "description": "A timeline component for viewing invoice creation dates and type of payment method.",
-```
-
-3. In the browser, you should now be able to see the same data as before, though this time it is live data coming from the demo ERP service, as shown below:
+2. In the browser, you should now be able to see the same data as before, though this time it is live data coming from the demo ERP service, as shown below:
 
 <table><tr><td>   
 <img src="images/pic-010.png" alt="alt text" width="500" height="283">
@@ -594,13 +587,28 @@ var PASSWORD = 'to be provided by your instructor';
 
 ## Part 3: Integrate into Visual Builder
 
-### (a) Set Up the Service Provider
+### (a) Prepare for Integration into Visual Builder
 
-### (b) Create a Variable
+1. It is important that you set the display name and description of the Web Component to something relevant since these values will be used in Visual Builder when you upload the Web Component. Therefore, in the 'component.json' file of the Web Component, set the displayName and description as follows:
 
-### (c) Install the Web Component
+```js #button { border: none; }
+  "displayName": "Invoice Timeline.",
+  "description": "A timeline component for viewing invoice creation dates and type of payment method.",
+```
 
-### (d) Use the Web Component
+2. Select the 'my-invoice-timeline' folder and use a Zip utility to compress it into a ZIP file. as shown below:
 
-### (e) Tweak the Web Component
+<table><tr><td>   
+<img src="images/pic-011.png" alt="alt text" width="500" height="371">
+</td></tr></table>
+
+### (b) Set Up the Service Provider
+
+### (c) Create a Variable
+
+### (d) Install the Web Component
+
+### (e) Use the Web Component
+
+### (f) Tweak the Web Component
 
