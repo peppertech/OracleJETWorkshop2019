@@ -555,7 +555,7 @@ self._generateYears();
 
 In the previous section, you were working against local data. Now, we're going to get our data from a demo ERP service.
 
-1. Start by creating a connection to the data using an AJAX call, with Basic authentication, so no getJSON, using an ArrayDataProvider, to the real URL.
+1. Start by creating a connection to the data using an AJAX call, with Basic authentication. While doing the below, comment out or delete your getJSON call and replace it with the below, in 'src/js/appControler.js':
 
 ```js #button { border: none; }
 $.ajax
@@ -570,6 +570,13 @@ $.ajax
       self.dataProvider(new ArrayDataProvider(results.items, { keyAttributes: 'invoiceId' }));
   }
 });
+```
+
+2. From your instructor, get the username and password and set them in 'src/js/appControler.js' as follows:
+
+```js #button { border: none; }
+var USERNAME = 'to be provided by your instructor';
+var PASSWORD = 'to be provided by your instructor';
 ```
 
 2. Go to index.html, items=[[dataProvider]], add a property in component.json file called 'items', type 'oj.DataProvider', displayName and description must be changed as well for Visual Builder.
