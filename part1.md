@@ -553,7 +553,7 @@ self._generateYears();
 
 ### (g) Use Real Data
 
-In the previous section, you were working against local data. Now, we're going to get our data from a demo ERP service.
+In the previous section, you were working against local data. Now, we're going to get real data from a live demo ERP service.
 
 1. Start by creating a connection to the data using an AJAX call, with Basic authentication. While doing the below, comment out or delete your getJSON call and replace it with the below, in 'src/js/appControler.js':
 
