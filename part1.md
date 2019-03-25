@@ -459,7 +459,7 @@ In the next section, we will provide UI components for setting the start and end
 
 ### (f) Add Advanced Features
 
-Form layout with two select boxes, one for the start year and one for the end year. Year generator, generates years. Set start date and end date of our timeline.
+In this section, you'll add some user interface components to your Web Component for letting the user set the range of years to be handled by the Timeline component. You will use Oracle JET's [FormLayout](https://www.oracle.com/webfolder/technetwork/jet/jetCookbook.html?component=ojFormLayout&demo=formverticalofl) with two select boxes, one for the start year and one for the end year. You'll also add a year generator, which will generate years to be displayed in the range pulldowns you'll be creating to set the start date and end date of your timeline.
 
 1. Start by completely replacing everything in 'my-invoice-timeline-view.html' with the below:
 
@@ -490,11 +490,40 @@ Form layout with two select boxes, one for the start year and one for the end ye
 </oj-timeline>
 ```
 
-2. In 'my-invoice-timeline-view.js', load the components referenced above, that is, 'ojs/ojselectcombobox', 'ojs/ojlabel', and 'ojs/ojformlayout' by referencing them in the 'define' block.
+2. In 'my-invoice-timeline-view.js', load the components referenced above, that is, 'ojs/ojselectcombobox', 'ojs/ojlabel', and 'ojs/ojformlayout' by referencing them in the 'define' block, as shown below:
 
-3. The code for...
+```js #button { border: none; }
+define(
+    ['knockout', 
+     'jquery', 
+     'ojL10n!./resources/nls/my-invoice-timeline-strings',
+     'ojs/ojtimeline', 
+     'ojs/ojselectcombobox',
+     'ojs/ojlabel',
+     'ojs/ojformlayout'], 
+        function (ko, $, componentStrings) {
+```        
 
-4. In the browser, ...
+3. In 'my-invoice-timeline-view.js', use a new Prototype function to create an array of years for use in the timeline range pulldowns, as shown below:
+
+```js #button { border: none; }
+// Creating an array of years for use in the timeline range pulldowns
+ExampleComponentModel.prototype._generateYears = function (context) {
+  var self = this;
+  var tempArray = [];
+  for (var year = 1950; year < 2050; year++) {
+    tempArray.push({
+      value: year,
+      label: year
+    });
+  }
+  self.yearList(tempArray);
+};
+```
+
+4. The code for...
+
+5. In the browser, ...
 
 <table><tr><td>   
 <img src="images/pic-010.png" alt="alt text" width="500" height="283">
