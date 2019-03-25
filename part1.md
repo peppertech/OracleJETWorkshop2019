@@ -579,13 +579,15 @@ var USERNAME = 'to be provided by your instructor';
 var PASSWORD = 'to be provided by your instructor';
 ```
 
-2. In the browser, you should now be able to see the same data as before, though this time it is live data coming from the demo ERP service, as shown below:
+3. In the browser, you should now be able to see the same data as before, though this time it is live data coming from the demo ERP service, as shown below:
 
 <table><tr><td>   
 <img src="images/pic-010.png" alt="alt text" width="500" height="283">
 </td></tr></table>
 
 ## Part 3: Integrate into Visual Builder
+
+The Web Component functions correctly and provides real data in our Oracle JET Core application. Let's now integrate it into Visual Builder so that it can be used there, too.
 
 ### (a) Prepare for Integration into Visual Builder
 
