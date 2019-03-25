@@ -521,9 +521,31 @@ ExampleComponentModel.prototype._generateYears = function (context) {
 };
 ```
 
-4. The code for...
+4. In 'my-invoice-timeline-view.js', add the code below to the constructor to enable the start and end dates to be changed as needed:
 
-5. In the browser, ...
+```js #button { border: none; }
+self.itemSelection = ko.observableArray([]);
+
+var currentDate = new Date('Jan. 1 2014');
+
+self.startYearValue = ko.observable((currentDate.getFullYear() - 1));
+self.endYearValue = ko.observable(currentDate.getFullYear() + 1);
+self.yearList = ko.observableArray([]);
+
+// watch for a change in the startYearValue from the pulldown
+// and adjust the startDate of the timeline as needed.
+self.startDate = ko.pureComputed(function () {
+    return new Date(String(self.startYearValue())).toISOString();
+});
+// same watch for endDate changes.
+self.endDate = ko.pureComputed(function () {
+    return new Date(String(self.endYearValue())).toISOString();
+});
+
+self._generateYears();
+```
+
+5. In the browser, you should now be able to set the start and end year and see the Timeline component update itself automatically, as shown below:
 
 <table><tr><td>   
 <img src="images/pic-010.png" alt="alt text" width="500" height="283">
