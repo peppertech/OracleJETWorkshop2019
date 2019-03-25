@@ -213,7 +213,7 @@ ExampleComponentModel.prototype.propertyChanged = function (context) {
 
 ### (d) Use External Data
 
-Rather than providing a Web Component together with its own data, we want to be able to pass in data from outside the Web Component. In this section, as an intermediate step, we will move the 'data.json' file outside the Web Component, while in subsequent sections we will access it via a REST endpoint.
+Rather than providing a Web Component together with its own data, we want to be able to pass in data from outside the Web Component. In this section, as an intermediate step, we will move the 'data.json' file outside the Web Component, while in subsequent sections we will access the data via a REST endpoint.
 
 1. Move the 'data.json' file into a folder outside the Web Component, that is, in the containing application in a new folder in 'src/js', named 'data', as shown below:
 
@@ -256,7 +256,7 @@ Similarly, in the Web Component's 'my-invoice-timeline-viewModel.js' file, redef
 self.items = ko.observableArray();
 ```
 
-Two lines below the above, make sure to change the reference to 'items' to the following instead:
+Two lines below the above, make sure to change the reference to 'items()' to the following instead:
 
 ```js #button { border: none; }
 self.items()
