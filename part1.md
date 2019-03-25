@@ -427,7 +427,13 @@ self._extractArrayFromDataProvider(context.value)
 self._extractArrayFromDataProvider(self.properties.items, self._shapeTimelineData, 10)
 ```
 
-4. In the browser, check that you now see the Timeline scenario working and displaying data, [this static data](https://gist.githubusercontent.com/peppertech/8a9691dc68b0a1466b0b7012b86e2578/raw/6281de2f93103bbe531a6bbb7e629c964865e896/erpData.json), and as shown below:
+4. In the code above, you're referring to four different images. These can be any four 32xx32 pixel images, or you can download those used in creating these instructions here, which should be available in the Web Component's 'resources/images' folder:
+
+<table><tr><td>   
+<img src="images/pic-008.png" alt="alt text" width="500" height="500">
+</td></tr></table>
+
+5. In the browser, check that you now see the Timeline scenario working and displaying data, [this static data](https://gist.githubusercontent.com/peppertech/8a9691dc68b0a1466b0b7012b86e2578/raw/6281de2f93103bbe531a6bbb7e629c964865e896/erpData.json), and as shown below:
 
 <table><tr><td>   
 <img src="images/pic-005.png" alt="alt text" width="500" height="305">
