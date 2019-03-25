@@ -422,7 +422,25 @@ self._extractArrayFromDataProvider(self.properties.items, self._shapeTimelineDat
 <img src="images/pic-008.png" alt="alt text" width="500" height="500">
 </td></tr></table>
 
-5. In the browser, check that you now see the Timeline scenario working and displaying data, [this static data](https://gist.githubusercontent.com/peppertech/8a9691dc68b0a1466b0b7012b86e2578/raw/6281de2f93103bbe531a6bbb7e629c964865e896/erpData.json), and as shown below:
+5. You need to make a few small tweaks to 'src/js/appControler.js', since you're working with different data now, i.e., 'erpData.json' has different kind of data than 'data.json' and therefore needs to be received slightly differently. Start by pointing to the 'erpData.json' where before you were referring to 'data.json':
+
+```js #button { border: none; }
+var url = "/js/data/erpData.json";
+```
+
+Next, notice in 'src/js/appControler.js', that you're referring to 'results' and 'id', as shown below:
+
+```js #button { border: none; }
+self.dataArray(new ArrayDataProvider(results, {keyAttributes: 'id'}));
+```
+
+Change that so that you're referring to 'results.items' and 'InvoiceId' instead, which are obtained from the 'erpData.json' file, as shown below:
+
+```js #button { border: none; }
+self.dataArray(new ArrayDataProvider(results.items, {keyAttributes: 'InvoiceId'}));
+```
+
+6. In the browser, check that you now see the Timeline scenario working and displaying data, [this static data](https://gist.githubusercontent.com/peppertech/8a9691dc68b0a1466b0b7012b86e2578/raw/6281de2f93103bbe531a6bbb7e629c964865e896/erpData.json), and as shown below:
 
 <table><tr><td>   
 <img src="images/pic-009.png" alt="alt text" width="500" height="269">
