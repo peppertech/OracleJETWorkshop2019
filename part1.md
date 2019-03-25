@@ -385,11 +385,11 @@ ExampleComponentModel.prototype._shapeTimelineData = function (sourceRow) {
   // change the border style and thumbnail color based on type of payment method
   var invoicePaymentMethod = {
     Check: {
-      color: 'blue',
+      color: 'green',
       img: require.toUrl('my-invoice-timeline/resources/images/box_01.png')
     },
     Electronic: {
-      color: 'green',
+      color: 'red',
       img: require.toUrl('my-invoice-timeline/resources/images/box_02.png')
     }
   };
