@@ -461,6 +461,7 @@ In the next section, we will provide UI components for setting the start and end
 
 Form layout with two select boxes, one for the start year and one for the end year. Year generator, generates years. Set start date and end date of our timeline.
 
+```html #button { border: none; }
 <div id="container" class="oj-flex oj-flex-items-padding">
     <oj-form-layout label-edge="top" max-columns="2" direction="row">
         <oj-label id="startYearLbl" for="startYear" value="Start Year">Start Year
@@ -480,6 +481,7 @@ Form layout with two select boxes, one for the start year and one for the end ye
              }' major-axis.scale="quarters" start="[[startDate]]" viewport-start="[[startDate]]" end="[[endDate]]" viewport-end="[[endDate]]" selection-mode="single"
              selection="[[itemSelection]]" series="[[timelineSeries]]" style="width:100%;min-height:350px">
 </oj-timeline>
+```
 
 ### (g) Use Real Data
 
