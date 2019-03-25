@@ -425,7 +425,7 @@ self._extractArrayFromDataProvider(self.properties.items, self._shapeTimelineDat
 5. In the browser, check that you now see the Timeline scenario working and displaying data, [this static data](https://gist.githubusercontent.com/peppertech/8a9691dc68b0a1466b0b7012b86e2578/raw/6281de2f93103bbe531a6bbb7e629c964865e896/erpData.json), and as shown below:
 
 <table><tr><td>   
-<img src="images/pic-005.png" alt="alt text" width="500" height="305">
+<img src="images/pic-009.png" alt="alt text" width="500" height="269">
 </td></tr></table>
 
 **Note:** As in the previous sections, since you created a new file, i.e., 'src/js/data/erpData.json' above, you need to kill the 'ojet' process and run 'ojet serve' again to serve the application.
