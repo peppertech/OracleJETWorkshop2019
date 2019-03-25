@@ -579,9 +579,18 @@ var USERNAME = 'to be provided by your instructor';
 var PASSWORD = 'to be provided by your instructor';
 ```
 
-2. Go to index.html, items=[[dataProvider]], add a property in component.json file called 'items', type 'oj.DataProvider', displayName and description must be changed as well for Visual Builder.
+2. Since the aim of this workshop is to integrate your Web Component with Visual Builder, it is important that you set the display name and description of the Web Component to something relevant since these values will be used in Visual Builder when you upload the Web Component. Therefore, in the 'component.json' file of the Web Component, set the displayName and description as follows:
 
-3. In timeline Web Component ViewModel, read the data coming in from the consumer.
+```js #button { border: none; }
+  "displayName": "Invoice Timeline.",
+  "description": "A timeline component for viewing invoice creation dates and type of payment method.",
+```
+
+3. In the browser, you should now be able to see the same data as before, though this time it is live data coming from the demo ERP service, as shown below:
+
+<table><tr><td>   
+<img src="images/pic-010.png" alt="alt text" width="500" height="283">
+</td></tr></table>
 
 ## Part 3: Integrate into Visual Builder
 
