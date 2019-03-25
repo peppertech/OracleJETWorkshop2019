@@ -181,7 +181,7 @@ self.referenceObjects = [{value: currentDate}];
 <img src="images/pic-005.png" alt="alt text" width="500" height="305">
 </td></tr></table>
 
-**Note:** As in the previous section, since you created a new file, i.e., 'data/data.json' above, you need to kill the 'ojet' process and run 'ojet serve' again to serve the application.
+**Note:** As in the previous section, since you created a new file, i.e., 'data/data.json' in the Web Component above, you need to kill the 'ojet' process and run 'ojet serve' again to serve the application.
 
 ### (c) Understand Best Practices for Web Component Development
 
@@ -215,7 +215,7 @@ ExampleComponentModel.prototype.propertyChanged = function (context) {
 
 Rather than providing a Web Component together with its own data, we want to be able to pass in data from outside the Web Component. In this section, as an intermediate step, we will move the 'data.json' file outside the Web Component, while in subsequent sections we will access it via a REST endpoint.
 
-1. Move the 'data.json' file into a folder outside the Web Component, that is, a new folder in 'src/js', named 'data', as shown below:
+1. Move the 'data.json' file into a folder outside the Web Component, that is, in the containing application in a new folder in 'src/js', named 'data', as shown below:
 
 <table><tr><td>   
 <img src="images/pic-006.png" alt="alt text" width="500" height="484">
@@ -236,7 +236,33 @@ $.getJSON(url).then(function (results) {
 
 3. For the above to work, in particular, the 'ArrayDataProvider' reference, make sure to include 'ojs/ojarraydataprovider' at the end of the 'define' block in 'appControler.js'.
 
-4. Read 'Access to External Data' in [Best Practices for Web Component Creation
+4. Since 'data.json' now comes from the containing application and we're using the code above to access it as described above, you'll now need to slightly refactor the Web Component's 'my-invoice-timeline-viewModel.js' file, because 'data.json' is now no longer loaded via the 'text!' protocol in the Web Component:
+
+```js #button { border: none; }
+define(
+    ['knockout', 
+//     'text!./data/data.json', 
+     'jquery', 
+     'ojL10n!./resources/nls/my-invoice-timeline-strings',
+     'ojs/ojtimeline'], 
+        function (ko, /**data,**/ $, componentStrings) {
+```
+
+Above, notice that the 'text!' protocol reference has been commented out, **as well as** its 'data' reference.
+
+Similarly, in the Web Component's 'my-invoice-timeline-viewModel.js' file, redefine 'self.items' as follows:
+
+```js #button { border: none; }
+self.items = ko.observableArray();
+```
+
+Two lines below the above, make sure to change the reference to 'items' to the following instead:
+
+```js #button { border: none; }
+self.items()
+```js #button { border: none; }
+
+5. Read 'Access to External Data' in [Best Practices for Web Component Creation
 ](https://docs.oracle.com/en/middleware/jet/6.1/develop/best-practices-web-component-creation.html#GUID-1A0A3469-AB57-4C0D-B1C7-FB49B5FBA0DF) and let's look at our properties. Let's set up an attribute for passing our data in from. To get started, in the Web Component's 'component.json' file, add a property named 'items', as shown below. 
 
 ```js #button { border: none; }
@@ -249,13 +275,13 @@ $.getJSON(url).then(function (results) {
 ```
 **Note:** We are going to pass in an array, but we're building these components in anticipation of wanting to use them in Visual Builder as well as in Oracle JET Core applications. We use 'oj.DataProvider' here because Visual Builder passes all data declaratively via a service data provider or an array data provider, both of which can be mapped to 'oj.DataProvider'.
 
-5. The Web Component will not pull in its own data, instead, it will handle the data that is passed into it. You will more than likely have multiple usages of your Web Component, so that the data needs to come from the outside, that is, from the containing application. Therefore, reference 'dataArray' as the value of the 'items' attribute in the 'index.html' file, as follows:
+6. The Web Component will not pull in its own data, instead, it will handle the data that is passed into it. You will more than likely have multiple usages of your Web Component, so that the data needs to come from the outside, that is, from the containing application. Therefore, reference 'dataArray' as the value of the 'items' attribute in the 'index.html' file, as follows:
 
 ```html #button { border: none; }
 <my-invoice-timeline id='myinvoicetimeline' items="[[dataArray]]"></my-invoice-timeline>
 ```
 
-6. In the Web Component's 'my-invoice-timeline-viewModel.js' file, since we want to keep the constructor as clean as possible for initialization, as discussed in the previous section, we will now use a combination of our own Prototype methods and later get and shape data there, too, in 'my-invoice-timeline-viewModel.js', after the constructor: 
+7. In the Web Component's 'my-invoice-timeline-viewModel.js' file, since we want to keep the constructor as clean as possible for initialization, as discussed in the previous section, we will now use a combination of our own Prototype methods and later get and shape data there, too, in 'my-invoice-timeline-viewModel.js', after the constructor: 
 
 ```js #button { border: none; }
 // Used for initialization of the data.
@@ -272,7 +298,7 @@ ExampleComponentModel.prototype.propertyChanged = function (context) {
     }
 };
 ```
-7. If you run this, you will see no data displayed. If we debug, and look to see what the value of 'self.properties.items' is, inside the 'propertyChanged' function above, we will find that 'items' is a 'DataProvider' object. The Timeline component expects an array, in a specific format. Let's therefore create a Prootype function that extracts the array data from the DataProvider.
+8. If you run the application right now, you will see no data is displayed. If we debug, and look to see what the value of 'self.properties.items' is inside the 'propertyChanged' function above, we will find that 'items' is a 'DataProvider' object. Instead, the Timeline component expects an array, in a specific format. Let's therefore create a Prototype function that extracts the array data from the DataProvider, as below.
 
 ```js #button { border: none; }
 ExampleComponentModel.prototype._extractArrayFromDataProvider =
@@ -310,7 +336,7 @@ ExampleComponentModel.prototype._extractArrayFromDataProvider =
   };
 ```
 
-Incorporate calls to the above in the earlier Prototype code:
+9. Incorporate calls to the above in the earlier Prototype code:
 
 ```js #button { border: none; }
 // Used for initialization of the data.
@@ -333,10 +359,17 @@ ExampleComponentModel.prototype.propertyChanged = function (context) {
     }
 };
 ```
+10. In the browser, check that you now see the Timeline scenario working and displaying data, exactly as shown in the previous section, and as shown below:
 
-The data that we're passing into the Web Component is already formatted in the structure that the Timeline component expects. This is almost never going to happen in reality. We will need to shape the data coming in from the REST Service to conform to the structure that the Timeline component expects.
+<table><tr><td>   
+<img src="images/pic-005.png" alt="alt text" width="500" height="305">
+</td></tr></table>
+
+**Note:** As in the previous sections, since you created a new file, i.e., 'src/js/data/data.json' above, you need to kill the 'ojet' process and run 'ojet serve' again to serve the application.
 
 ### (e) Shaping External Data
+
+The data that we're passing into the Web Component from the containing application is already formatted in the structure that the Timeline component expects. This is almost never going to happen in reality. We will need to **shape** the data coming in from the REST Service to conform to the structure that the Timeline component expects.
 
 1. We provide [the erpData.json file](https://gist.github.com/peppertech/8a9691dc68b0a1466b0b7012b86e2578), with local data in the component – local method and remote method. Show how to customize attributes of the timeline based on the data coming in – thumbnail and svg styling.
 
