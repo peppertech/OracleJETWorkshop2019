@@ -298,7 +298,7 @@ ExampleComponentModel.prototype.propertyChanged = function (context) {
     }
 };
 ```
-8. If you run the application right now, you will see no data is displayed. If we debug, and look to see what the value of 'self.properties.items' is inside the 'propertyChanged' function above, we will find that 'items' is a 'DataProvider' object. Instead, the Timeline component expects an array, in a specific format. Let's therefore create a Prototype function that extracts the array data from the DataProvider, as below.
+8. If you run the application right now, you will see no data is displayed. If we debug, and look to see what the value of 'self.properties.items' is inside the 'propertyChanged' function above, we will find that 'items' is a 'DataProvider' object. Instead, the Timeline component expects an array, in a specific format. Let's therefore create a Prototype function that extracts the array data from the DataProvider, as below, in the Web Component's 'my-invoice-timeline-viewModel.js' file:
 
 ```js #button { border: none; }
 ExampleComponentModel.prototype._extractArrayFromDataProvider =
@@ -369,13 +369,18 @@ ExampleComponentModel.prototype.propertyChanged = function (context) {
 
 ### (e) Shaping External Data
 
-The data that we're passing into the Web Component from the containing application is already formatted in the structure that the Timeline component expects. This is almost never going to happen in reality. We will need to **shape** the data coming in from the REST Service to conform to the structure that the Timeline component expects.
+The data that we're passing into the Web Component from the containing application is already formatted in the structure that the Timeline component expects. This is almost never going to happen in reality. We will need to **shape** the data coming in from the REST Service to conform to the structure that the Timeline component expects. Below, you learn how to customize attributes of the Timeline component based on the data coming in, in particular, the thumbnail and styling of the Timeline component.
 
-1. We provide [the erpData.json file](https://gist.githubusercontent.com/peppertech/8a9691dc68b0a1466b0b7012b86e2578/raw/6281de2f93103bbe531a6bbb7e629c964865e896/erpData.json), with local data in the component – local method and remote method. Show how to customize attributes of the timeline based on the data coming in – thumbnail and svg styling.
+1. Put [this static data](https://gist.githubusercontent.com/peppertech/8a9691dc68b0a1466b0b7012b86e2578/raw/6281de2f93103bbe531a6bbb7e629c964865e896/erpData.json) into a file named 'erpData.json', in the folder where you already have 'data.json', as shown below:
+
+<table><tr><td>   
+<img src="images/pic-004.png" alt="alt text" width="500" height="494">
+</td></tr></table>
+
+2. Create another Prototype function that extracts the array data from the DataProvider, as shown below, in the Web Component's 'my-invoice-timeline-viewModel.js' file:
 
 ```js #button { border: none; }
-// mapping the data from the REST service into a format that the timeline expects.
-// Also, setting special styles and thumbnail images based on specific values in the data.
+// Set special styles and thumbnail images based on specific values in the data.
 ExampleComponentModel.prototype._shapeTimelineData = function (sourceRow) {
   // change the border style and thumbnail color based on type of payment method
   var invoicePaymentMethod = {
@@ -410,13 +415,25 @@ ExampleComponentModel.prototype._shapeTimelineData = function (sourceRow) {
 };
 ```
 
-2. In bindingsApplied and propertyChanged.
+3. We now need to connect calls to the code above to the 'bindingsApplied' and 'propertyChanged' Prototype methods we created earlier. In those two methods, find the line below:
 
-Include self._shapeTimelineData, 10
+```js #button { border: none; }
+self._extractArrayFromDataProvider(context.value)
+```
 
-3. Put erpData.json in src/js/data
+...and replace it with the following:
 
-4. New file, so new ojet serve.
+```js #button { border: none; }
+self._extractArrayFromDataProvider(self.properties.items, self._shapeTimelineData, 10)
+```
+
+4. In the browser, check that you now see the Timeline scenario working and displaying data, [this static data](https://gist.githubusercontent.com/peppertech/8a9691dc68b0a1466b0b7012b86e2578/raw/6281de2f93103bbe531a6bbb7e629c964865e896/erpData.json), and as shown below:
+
+<table><tr><td>   
+<img src="images/pic-005.png" alt="alt text" width="500" height="305">
+</td></tr></table>
+
+**Note:** As in the previous sections, since you created a new file, i.e., 'src/js/data/erpData.json' above, you need to kill the 'ojet' process and run 'ojet serve' again to serve the application.
 
 ### (f) Add Advanced Features
 
