@@ -371,7 +371,7 @@ ExampleComponentModel.prototype.propertyChanged = function (context) {
 
 The data that we're passing into the Web Component from the containing application is already formatted in the structure that the Timeline component expects. This is almost never going to happen in reality. We will need to **shape** the data coming in from the REST Service to conform to the structure that the Timeline component expects.
 
-1. We provide [the erpData.json file](https://gist.github.com/peppertech/8a9691dc68b0a1466b0b7012b86e2578), with local data in the component – local method and remote method. Show how to customize attributes of the timeline based on the data coming in – thumbnail and svg styling.
+1. We provide [the erpData.json file](https://gist.githubusercontent.com/peppertech/8a9691dc68b0a1466b0b7012b86e2578/raw/6281de2f93103bbe531a6bbb7e629c964865e896/erpData.json), with local data in the component – local method and remote method. Show how to customize attributes of the timeline based on the data coming in – thumbnail and svg styling.
 
 ```js #button { border: none; }
 // mapping the data from the REST service into a format that the timeline expects.
