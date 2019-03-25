@@ -461,6 +461,8 @@ In the next section, we will provide UI components for setting the start and end
 
 Form layout with two select boxes, one for the start year and one for the end year. Year generator, generates years. Set start date and end date of our timeline.
 
+1. Start by completely replacing everything in 'my-invoice-timeline-view.html' with the below:
+
 ```html #button { border: none; }
 <div id="container" class="oj-flex oj-flex-items-padding">
     <oj-form-layout label-edge="top" max-columns="2" direction="row">
@@ -487,6 +489,12 @@ Form layout with two select boxes, one for the start year and one for the end ye
              style="width:100%;min-height:350px">
 </oj-timeline>
 ```
+
+2. In 'my-invoice-timeline-view.js', load the components referenced above, that is, 'ojs/ojselectcombobox', 'ojs/ojlabel', and 'ojs/ojformlayout' by referencing them in the 'define' block.
+
+3. The code for...
+
+4. In the browser, ...
 
 ### (g) Use Real Data
 
