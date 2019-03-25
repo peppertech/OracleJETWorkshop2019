@@ -374,7 +374,7 @@ The data that we're passing into the Web Component from the containing applicati
 1. Put [this static data](https://gist.githubusercontent.com/peppertech/8a9691dc68b0a1466b0b7012b86e2578/raw/6281de2f93103bbe531a6bbb7e629c964865e896/erpData.json) into a file named 'erpData.json', in the folder where you already have 'data.json', as shown below:
 
 <table><tr><td>   
-<img src="images/pic-004.png" alt="alt text" width="500" height="494">
+<img src="images/pic-007.png" alt="alt text" width="500" height="517">
 </td></tr></table>
 
 2. Create another Prototype function that extracts the array data from the DataProvider, as shown below, in the Web Component's 'my-invoice-timeline-viewModel.js' file:
