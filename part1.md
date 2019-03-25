@@ -416,7 +416,7 @@ self._extractArrayFromDataProvider(context.value)
 self._extractArrayFromDataProvider(self.properties.items, self._shapeTimelineData, 10)
 ```
 
-4. In the code above, you're referring to four different images. These can be any four 32xx32 pixel images, or you can download those used in creating these instructions here, which should be available in the Web Component's 'resources/images' folder:
+4. In the code above, you're referring to four different images. These can be any four 32x32 pixel images, or you can download those used in creating these instructions here, which should be available in the Web Component's 'resources/images' folder:
 
 <table><tr><td>   
 <img src="images/pic-008.png" alt="alt text" width="500" height="500">
