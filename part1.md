@@ -574,6 +574,8 @@ $.ajax
 });
 ```
 
+**Note:** We need to be able to provide credentials, which 'getJSON' doesn't allow you to do, which is why we are switching to AJA here for a more complex call.
+
 2. From your instructor, get the username, password, and service URL and set them in 'src/js/appControler.js' as follows:
 
 ```js #button { border: none; }
