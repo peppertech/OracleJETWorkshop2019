@@ -574,7 +574,7 @@ $.ajax
 });
 ```
 
-2. From your instructor, get the username and password and set them in 'src/js/appControler.js' as follows:
+2. From your instructor, get the username, password, and service URL and set them in 'src/js/appControler.js' as follows:
 
 ```js #button { border: none; }
 var USERNAME = 'to be provided by your instructor';
