@@ -461,6 +461,8 @@ In the next section, we will provide UI components for setting the start and end
 
 In this section, you'll add some user interface components to your Web Component for letting the user set the range of years to be handled by the Timeline component. You will use Oracle JET's [FormLayout](https://www.oracle.com/webfolder/technetwork/jet/jetCookbook.html?component=ojFormLayout&demo=formverticalofl) with two select boxes, one for the start year and one for the end year. You'll also add a year generator, which will generate years to be displayed in the range pulldowns you'll be creating to set the start date and end date of your timeline.
 
+The idea here is that we're adding more value to the component itself. In the end, our Web Component won't simply be a Timeline, it will also have additional features. This illustrates that you can enhance existing Oracle JET components by combining them together into a Web Component.
+
 1. Start by completely replacing everything in 'my-invoice-timeline-view.html' with the below:
 
 ```html #button { border: none; }
