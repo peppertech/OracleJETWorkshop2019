@@ -563,7 +563,7 @@ In the previous section, you were working against local data. Now, we're going t
 $.ajax
 ({
   type: "GET",
-  url: "https://ucf1-ecst-fa-ext.oracledemos.com/fscmRestApi/resources/11.13.18.05/invoices?onlyData=true&limit=50",
+  url: SERVICE-URL,
   dataType: 'json',
   headers: {
     "Authorization": "Basic " + btoa(USERNAME + ":" + PASSWORD)
@@ -579,6 +579,7 @@ $.ajax
 ```js #button { border: none; }
 var USERNAME = 'to be provided by your instructor';
 var PASSWORD = 'to be provided by your instructor';
+var SERVICE-URL = 'to be provided by your instructor';
 ```
 
 3. In the browser, you should now be able to see the same data as before, though this time it is live data coming from the demo ERP service, as shown below:
