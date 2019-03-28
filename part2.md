@@ -1,7 +1,7 @@
 # Workshop: Creating a Custom Theme with SASS
-This workshop will focus on the tools and technicques for creating a custom theming using thes SASS source code provided with the Oracle JET distribution.
+This workshop will focus on the tools and techniques for creating a custom theming using the SASS source code provided with the Oracle JET distribution.
 
-While this topic is slightly dated as we move toward the use of CSS Variables for theming (available late 2019) the concepts and tooling will be very similiar and this is a good topic to have a basic understanding of.
+While this topic is slightly dated as we move toward the use of CSS Variables for theming (available late 2019) the concepts and tooling will be very similar and this is a good topic to have a basic understanding of.
 
 The custom theme changes will focus on the following areas:
 
@@ -40,7 +40,7 @@ As with your previous work with the JET CLI, you can build and serve the project
 ```js
 ojet serve
 ```
-After you've had a look around, press Ctrl-C to stop the server.
+After you've had a look around, press Ctrl-C in the command window to stop the server.
 
 ### (c) Add SASS
 
@@ -59,22 +59,40 @@ To create your own theme, you will run the below command. The new theme will be 
 ```js
 ojet create theme myTheme
 ```
+After your theme has been created, look in the /src folder and you should now see a new /themes folder and inside of that, your /myTheme folder.
 
-**Tip:** The /themes directory that you will see off of the root of the project, can and should be ignored. It's created as part of the build process. You should not edit or change files in this directory as they will be overwritten.
+![mytheme folder structure](images/p2-img002.png)
+
+
+**Tip:** The /themes directory that you will see off of the root of the project can, and should, be ignored. It's created as part of the build process. You should not edit or change files in this directory as they will be overwritten. Always do your development work in the /src folder.
 
 You are now ready to start making your own theme!
 
-### (c) Creating an Oracle JET Application
-
-
-
 ![Testing image only](images/pic-001.jpg)
 
-**Note:** Make sure you have a JavaScript editor, such as Visual Studio or Apache NetBeans, and open the sources created in step 1 above. Simply using Notepad will not provide the syntax coloring and other JavaScript editor features you need. 
+**Note:** Make sure you have a CSS editor, such as Visual Studio or Apache NetBeans, and open the sources created in step 1 above. Simply using Notepad will not provide the syntax coloring and other helpful CSS editor features. 
 
 ## 2: Understanding the Theme structure
 
+As you've seen in the directory structure image above, your new theme has SASS source code (.scss) files for multiple platforms.  When you build a JET application using the JET tooling, a platform specific theme is automatically added to your app for the platform you are targeting.  You can override this by adding the --themes argument to the build/serve command.
+
+For this workshop, you are going to focus on the /web theme only.  You should explore the other themes at another time, to compare some of the differences.
+
 ### (a) File dependencies
+
+1. Change into the /src/themes/myTheme/web directory.
+
+    You will see two files by default.
+    * _myTheme.web.settings.scss
+    * myTheme.scss
+
+2. Open the myTheme.scss file in your editor of choice.
+
+As you will read in the comments at the top of this file, this is the main aggregator for any other SASS source files that you will create for your theme.
+
+The way that theming works in JET, is that the base Alta theme is available by default, and then changes are made to override the various settings where wanted.  Anything that is not overridden will be managed by the base .scss source.
+
+
 
 ### (b) The settings file
 
