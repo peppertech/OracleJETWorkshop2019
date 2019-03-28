@@ -50,38 +50,23 @@ Now that you have the sample project working, let's set things up for working wi
 ojet add sass
 ```
 
-You will see the library node-sass being installed. Once it's completed, you're ready to create your own theme.
+You will see the library *node-sass* being installed. Once it's completed, you're ready to create your own theme.
 
 ### (d) Create custom theme
 
-
+To create your own theme, you will run the below command. The new theme will be added under the /src/themes folder. **All** work that you will be doing will be in this directory.  
 
 ```js
 ojet create theme myTheme
 ```
 
-**Tip:** If the above shows that you have an **earlier** version of the Oracle JET command-line interface, i.e., below 6.1.0, please reinstall Oracle JET, using the command in step 1 above to do so.
+**Tip:** The /themes directory that you will see off of the root of the project, can and should be ignored. It's created as part of the build process. You should not edit or change files in this directory as they will be overwritten.
 
-You are now ready to get started with Oracle JET!
+You are now ready to start making your own theme!
 
 ### (c) Creating an Oracle JET Application
 
-**We will use the Oracle JET 'basic' template so that we have the simplest possible Oracle JET application, enabling us to focus on component creation in the next section, and not on routing. The 'basic' template will give us an 'index.html' file, where we will design the component, with the data initially hardcoded and coming from the 'src/js/appControler.js' file.**
 
-1. Run the following in the terminal:
-
-```js
-ojet create BasicApp --template=basic
-```
-**Note:** This process may take some time.
-
-2. CD into 'BasicApp' and run the following in the terminal and look in the browser:
-
-```js 
-ojet serve
-```
-
-After a few moments, you should see an empty page in the browser:
 
 ![Testing image only](images/pic-001.jpg)
 
