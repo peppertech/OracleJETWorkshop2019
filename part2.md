@@ -20,7 +20,7 @@ If you do not have JET installed, please go back to Part I and follow the steps 
 
 The workshop will use sample project that has already been put together for you.  This project has every JET UI component included in it so that you can very quickly see the effect your custom theme changes will have on JET itself.
 
-1. Download this [sample project]('wiki/project/ThemeStarter.zip') and unzip it into a project directory.
+1. Download this [sample project](https://github.com/peppertech/OracleJETWorkshop2019/wiki/project/ThemeStarter.zip) and unzip it into a project directory.
 2. Change into the *ThemeStarter* directory
 
 
