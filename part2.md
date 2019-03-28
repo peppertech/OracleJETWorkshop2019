@@ -18,25 +18,43 @@ If you do not have JET installed, please go back to Part I and follow the steps 
 
 ### (a) Downloading the sample project
 
-The workshop will use sample project that has already been put together for you.  This project has every JET UI component included in it so that you can very quickly see the effect your custom theme changes will have on JET itself.
+The workshop will use a sample project that has already been put together for you. This project has every JET UI component included in it so that you can very quickly see the effect your custom theme changes will have on JET itself.
 
 1. Download this [sample project](https://github.com/peppertech/OracleJETWorkshop2019/wiki/project/ThemeStarter.zip) and unzip it into a project directory.
-2. Change into the *ThemeStarter* directory
+2. Open a terminal/command window and goto the directory that you unzipped the sample project into.
+3. Change into the *ThemeStarter* directory.
+4. From the root of the project folder run this command
 
+```js
+ojet restore
+```
+
+When the restore command is completed, you should see something like the image below.
+
+![completed restore](images/p2-img001.png)
 
 ### (b) Running the sample project
+
+As with your previous work with the JET CLI, you can build and serve the project. Run the below command to see the what the project looks like by default.
 
 ```js
 ojet serve
 ```
+After you've had a look around, press Ctrl-C to stop the server.
 
 ### (c) Add SASS
+
+Now that you have the sample project working, let's set things up for working with SASS.  From the command line, run the below command.
 
 ```js
 ojet add sass
 ```
 
+You will see the library node-sass being installed. Once it's completed, you're ready to create your own theme.
+
 ### (d) Create custom theme
+
+
 
 ```js
 ojet create theme myTheme
