@@ -173,8 +173,15 @@ Uncomment the $fontFamily line and add a reference to the new web font that you 
 $fontFamily: 'Ubuntu', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif !default;
 ```
 
+Save the file and take a look at the application running in the browser again. Take a careful look at the lowercase **T** in *Icon Font* and *Button* areas of the page.
 
-### (c) Buttons
+**NOTE:** The *node-sass* library used for build time compilation can be rather fragile.  If it hasn't crashed yet while you've been working on the changes above, it most likely will at some point in the future.  When this happens, you simple need to rerun the *ojet serve --themes=myTheme:all* command which will open a new browser tab. You can close the old tab and continue on with the new one. This fragility is another reason to look forward to the move to CSS Variables. 
+
+### (c) Font colors
+
+
+### (d) Buttons
+
 
 ## 4: Loading your custom theme in Visual Builder
 
