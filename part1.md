@@ -100,7 +100,7 @@ ojet create component my-invoice-timeline
 
 3. Open the files in the 'my-invoice-timeline' Web Component. In particular, notice that the demo message 'Hello from Example Component' is defined in 'my-invoice-timeline-viewModel.js', while it is rendered in 'my-invoice-timeline-viewModel.html'.
 
-4. Open the 'src/js/appControler.js' file. Load the loader, i.e., 'my-invoice-timeline/loader', at the end of the dependency list passed into the 'define()' call of the 'src/js/appControler.js', as shown below:
+4. Open the 'src/js/appControler.js' file. Load the loader, i.e., 'my-invoice-timeline/loader', at the end of the dependency list passed into the 'define' block of the 'src/js/appControler.js', as shown below:
 
 ```js #button { border: none; }
 define(['ojs/ojcore', 'knockout', 'ojs/ojknockout', 'my-invoice-timeline/loader'],
@@ -174,7 +174,16 @@ self.referenceObjects = [{value: currentDate}];
              style='width:100%;height:350px'>
 </oj-timeline>
 ```
-5. For the above to work, in particular, for the Timeline component to be loaded, make sure to include 'ojs/ojtimeline' at the end of the 'define' block in 'appControler.js'.
+5. For the above to work, in particular, for the Timeline component to be loaded, make sure to include 'ojs/ojtimeline' at the end of the 'define' block in the 'my-invoice-timeline-viewModel.js' file, as shown below:
+
+```js #button { border: none; }
+define(
+    ['knockout', 
+     'text!./data/data.json', 
+     'jquery', 'ojL10n!./resources/nls/my-invoice-timeline-strings',
+     'ojs/ojtimeline'], 
+        function (ko, data, $, componentStrings) {
+```
 
 6. In the browser, check that you now see the Timeline scenario working and displaying data, exactly as shown in the [Single Series Timeline from the Oracle JET Cookbook](https://www.oracle.com/webfolder/technetwork/jet/jetCookbook.html?component=timeline&demo=basicTimeline), and as shown below:
 
