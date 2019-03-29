@@ -206,8 +206,7 @@ Now that we have the basic Web Component working, let's talk about best practice
 This is called one time and initializes data in your code:
 
 ```js #button { border: none; }
-// Used for initialization of the data.
-ExampleComponentModel.prototype.bindingsApplied = function (context) {
+ExampleComponentModel.prototype.activated = function(context){
   ...
 };
 ```
@@ -215,8 +214,7 @@ ExampleComponentModel.prototype.bindingsApplied = function (context) {
 Called whenever a component's property actually changes:
 
 ```js #button { border: none; }
-// Used to handle the use case where the dataProvider passed into the component changes at runtime.
-ExampleComponentModel.prototype.propertyChanged = function (context) {
+ExampleComponentModel.prototype.connected = function(context){
   ...
 };
 ```
