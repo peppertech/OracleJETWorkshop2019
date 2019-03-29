@@ -353,6 +353,12 @@ ExampleComponentModel.prototype._extractArrayFromDataProvider =
   };
 ```
 
+**Note:** In the above, reference is made to 'self.emptyTextMessage'. Define it as follows, in the constructor:
+
+```js #button { border: none; }
+self.emptyTextMessage = ko.observable('Loading data...');
+```
+
 9. Incorporate calls to the above in the earlier Prototype code:
 
 ```js #button { border: none; }
