@@ -482,7 +482,7 @@ end='[[new Date("Jan 31, 2014").toISOString()]]'
 
 In the next section, we will provide UI components for setting the start and end date dynamically.
 
-**Note:** As in the previous sections, since you created a new file, i.e., 'src/js/data/erpData.json' above, you need to kill the 'ojet' process and run 'ojet serve' again to serve the application.
+**Note:** As in the previous sections, since you created a new file, i.e., 'src/js/data/erpData.json' above, and added new image files, you need to kill the 'ojet' process and run 'ojet serve' again to serve the application.
 
 ### (f) Add Advanced Features
 
