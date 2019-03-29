@@ -160,7 +160,6 @@ self.referenceObjects = [{value: currentDate}];
 
 ```html #button { border: none; }
 <oj-timeline id='tline' 
-             :aria-label="[['Single Series Timeline Demo. Current date is ' + currentDateString()]]"
              minor-axis='{
                "scale": "weeks",
                "zoomOrder": ["months", "weeks", "days"]
