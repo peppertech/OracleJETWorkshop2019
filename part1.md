@@ -338,11 +338,8 @@ ExampleComponentModel.prototype._extractArrayFromDataProvider =
         dpIterator.next().then(function (result) {
           var extractedArray = [];
           if (result.value.data && result.value.data.length > 0) {
-            result.value.data.forEach(function (row, index,
-              allArray) {
-              extractedArray.push(doTransform ?
-                rowTransformer(row) :
-                row);
+            result.value.data.forEach(function (row, index, allArray) {
+              extractedArray.push(doTransform ? rowTransformer(row) : row);
             });
           }
           self.emptyTextMessage('No data available');
