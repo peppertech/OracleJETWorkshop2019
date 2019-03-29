@@ -242,7 +242,13 @@ $.getJSON(url).then(function (results) {
 })
 ```
 
-3. For the above to work, in particular, the 'ArrayDataProvider' reference, make sure to include 'ojs/ojarraydataprovider' at the end of the 'define' block in 'appControler.js'.
+3. For the above to work, in particular, the 'ArrayDataProvider' reference, make sure to include a reference to 'ojs/ojarraydataprovider' at the end of the 'define' block in 'src/js/appControler.js', together with a reference in the same order to 'ArrayDataProvider' in the function callback, as shown below:
+
+```js #button { border: none; }
+define(['ojs/ojcore', 'knockout', 'ojs/ojarraydataprovider', 
+    'ojs/ojknockout', 'my-invoice-timeline/loader'],
+  function(oj, ko, ArrayDataProvider) {
+```  
 
 4. Since 'data.json' now comes from the containing application and we're using the code above to access it as described above, you'll now need to slightly refactor the Web Component's 'my-invoice-timeline-viewModel.js' file, because 'data.json' is now no longer loaded via the 'text!' protocol in the Web Component:
 
