@@ -151,13 +151,27 @@ Scroll down on this website and look for the **Popular Pairings with Ubuntu** se
 
 Click on the toggle arrows to switch back and forth between the Ubuntu example and the Open Sans example. A good point of reference for noticing the difference is the lower case T and L between the two fonts.
 
-To learn more about how to use the Ubuntu font, move up to the top of the website and click on the link in the top right corner that says, "**Select this font**" It looks like the image below.  Once you select this font, a panel will show up at the bottom of your browser. Click on this panel and it will expand up into the page with details about the usage of the font.  It should look like the image below.
+To learn more about how to use the Ubuntu font, move up to the top of the website and click on the link in the top right corner that says, "**Select this font**" It looks like the image below.  
+
+![select font link](images/p2-img007.png)
+
+Once you select this font, a panel will show up at the bottom of your browser. Click on this panel and it will expand up into the page with details about the usage of the font.  It should look like the image below.
 
 ![ubuntu font usage panel](images/p2-img008.png)
 
+Copy the text for the **<link>** from the panel, as shown with the arrow in the above image.
 
+In your editor, open the *src/index.html* file, and paste this new link reference into the **\<head>** section of the file just under the reference to the */democss/app.css* stylesheet. It will look like the image below when saved.
 
-In your editor, open the src/index.html file.
+![font link reference added](images/p2-img010.png)
+
+Save the changes to index.html and go back to the _myTheme.web.settings.scss file in your editor.
+
+Uncomment the $fontFamily line and add a reference to the new web font that you just added to index.html
+
+```css
+$fontFamily: 'Ubuntu', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif !default;
+```
 
 
 ### (c) Buttons
@@ -165,32 +179,6 @@ In your editor, open the src/index.html file.
 ## 4: Loading your custom theme in Visual Builder
 
 
-```html 
-<oj-timeline id='tline' 
-             :aria-label="[['Single Series Timeline Demo. Current date is ' + currentDateString()]]"
-             minor-axis='{
-               "scale": "weeks",
-               "zoomOrder": ["months", "weeks", "days"]
-             }'
-             major-axis.scale='quarters'
-             start='[[new Date("Jan 1, 2010").toISOString()]]'
-             end='[[new Date("Dec 31, 2010").toISOString()]]'
-             selection-mode='single'
-             reference-objects='[[referenceObjects]]'
-             selection='["e4"]'
-             series='[[timelineSeries]]'
-             style='width:100%;height:350px'>
-</oj-timeline>
-```
-
-### (b) Set Up the Service Provider
-
-### (c) Create a Variable
-
-### (d) Install the Web Component
-
-### (e) Use the Web Component
-
-### (f) Tweak the Web Component
+Can there ever be enough Pugs in the world!?
 
 ![can there ever be enough Pugs in the world?](images/pic-001.jpg)
