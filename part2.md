@@ -119,7 +119,7 @@ ojet serve --themes=myTheme:all
 ```
 **TIP:** The above command will build and serve the project using the specific theme that you've stated, as well as all of the variations, like Android, iOS, Windows, and Web (the default).  If you only want to build and test for web, you can change the last argument to be *web* instead of *all*
 
-1. In the settings file (_mytheme.web.settings.scss) search for the variable *$brandColor*.  Go to the third instance of the name.  It should take you to approximately line 291 in the file, and looks like this:
+Going back to your Editor, in the settings file (_mytheme.web.settings.scss) search for the variable *$brandColor*.  Go to the third instance of the name.  It should take you to approximately line 291 in the file, and looks like this:
 
 ![brandcolor variable](images/p2-img003.png);
 
@@ -127,7 +127,38 @@ Uncomment the line for this variable, as well as all of the color variables betw
 
 ![uncommented variables up to the DVT Colors](images/p2-img004.png)
 
+Change the value for the *$brandColor* variable to be: **#490A3D**
+
+Save your changes and watch what happens in the browser. Click on the buttons and see how the base color is no longer a shade of blue.  Notice the gradients that are used for the icon states has been generated for you a well, based off of this new base brand color.
+
+![buttons and icons with new brand color](images/p2-img005.png)
+
 ### (b) Font-family (web fonts)
+
+By default the JET themes use the System font for each platform that you run your app on.  A new trend if web app development is to use a Web Font instead.
+
+In the settings file again, search for the $fontFamily variable. Go to the second instance that is found. It should be at approximately line 411 in the file, and will look like the image below.  Here you will see the defaults for Apple(Mac), Windows, and a fallback to Hevetica Neue as a default.
+
+![$fontFamily variable](images/p2-img006.png)
+
+You are going to add a Web Font called "Ubuntu" as the default font family for your application.  To do this, you first need to download or configure your application to reference a CDN location for the web font files.
+
+In a browser, go to the [Google Web Fonts website](https://fonts.google.com/specimen/Ubuntu) for the Ubuntu web font to see the specifications and learn more about how to use the font family.
+
+Scroll down on this website and look for the **Popular Pairings with Ubuntu** section on the left side of the screen. It looks like the image below.
+
+![popular pairings panel](images/p2-img009.png)
+
+Click on the toggle arrows to switch back and forth between the Ubuntu example and the Open Sans example. A good point of reference for noticing the difference is the lower case T and L between the two fonts.
+
+To learn more about how to use the Ubuntu font, move up to the top of the website and click on the link in the top right corner that says, "**Select this font**" It looks like the image below.  Once you select this font, a panel will show up at the bottom of your browser. Click on this panel and it will expand up into the page with details about the usage of the font.  It should look like the image below.
+
+![ubuntu font usage panel](images/p2-img008.png)
+
+
+
+In your editor, open the src/index.html file.
+
 
 ### (c) Buttons
 
