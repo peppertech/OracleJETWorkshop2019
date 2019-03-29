@@ -427,13 +427,17 @@ ExampleComponentModel.prototype._shapeTimelineData = function (sourceRow) {
 };
 ```
 
-3. We now need to connect calls to the code above to the 'bindingsApplied' and 'propertyChanged' Prototype methods we created earlier. In those two methods, find the line below:
+3. We now need to connect calls to the code above to the 'bindingsApplied' and 'propertyChanged' Prototype methods we created earlier. In those two methods, find the two lines below:
 
 ```js #button { border: none; }
 self._extractArrayFromDataProvider(context.value)
 ```
 
-...and replace it with the following:
+```js #button { border: none; }
+self._extractArrayFromDataProvider(self.properties.items)
+```
+
+...and replace each of the above two lines with the following:
 
 ```js #button { border: none; }
 self._extractArrayFromDataProvider(self.properties.items, self._shapeTimelineData, 10)
