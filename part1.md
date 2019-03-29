@@ -121,6 +121,8 @@ define(['ojs/ojcore', 'knockout', 'ojs/ojknockout', 'my-invoice-timeline/loader'
 
 **Note:** As stated above, you needed to run 'ojet serve' to serve the application, since you killed the 'ojet' process in step 1 of this section.
 
+We'll need to display only one Timeline component in our page, so to avoid confusion later when the above will cause the component to render more than once, make sure to have only one 'my-invoice-timeline' custom element in your 'index.html' before continuing.
+
 ### (b) Set Up a Timeline Component from the Cookbook
 
 We are going to take the [Single Series Timeline from the Oracle JET Cookbook](https://www.oracle.com/webfolder/technetwork/jet/jetCookbook.html?component=timeline&demo=basicTimeline) as a starting point and then customize it to our requirements in subsequent sections.
