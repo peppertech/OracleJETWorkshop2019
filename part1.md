@@ -467,13 +467,7 @@ Change that so that you're referring to 'results.items' and 'InvoiceId' instead,
 self.dataArray(new ArrayDataProvider(results.items, {keyAttributes: 'InvoiceId'}));
 ```
 
-6. In the browser, check that you now see the Timeline scenario working and displaying data, [this static data](https://gist.githubusercontent.com/peppertech/8a9691dc68b0a1466b0b7012b86e2578/raw/6281de2f93103bbe531a6bbb7e629c964865e896/erpData.json), and as shown below:
-
-<table><tr><td>   
-<img src="images/pic-009.png" alt="alt text" width="500" height="269">
-</td></tr></table>
-
-**Note:** To be able to easily see the data in the Timeline, change the hardcoded start and end date in 'my-invoice-timeline-view.html' to the following. 
+6. To be able to easily see the data in the Timeline, change the hardcoded start and end date in 'my-invoice-timeline-view.html' to the following. 
 
 ```html #button { border: none; }
 start='[[new Date("November 1, 2013").toISOString()]]'
@@ -481,6 +475,12 @@ end='[[new Date("Jan 31, 2014").toISOString()]]'
 ```
 
 In the next section, we will provide UI components for setting the start and end date dynamically.
+
+7. In the browser, check that you now see the Timeline scenario working and displaying data, [this static data](https://gist.githubusercontent.com/peppertech/8a9691dc68b0a1466b0b7012b86e2578/raw/6281de2f93103bbe531a6bbb7e629c964865e896/erpData.json), and as shown below:
+
+<table><tr><td>   
+<img src="images/pic-009.png" alt="alt text" width="500" height="269">
+</td></tr></table>
 
 **Note:** As in the previous sections, since you created a new file, i.e., 'src/js/data/erpData.json' above, and added new image files, you need to kill the 'ojet' process and run 'ojet serve' again to serve the application.
 
