@@ -264,7 +264,13 @@ define(
 
 Above, notice that the 'text!' protocol reference has been commented out, **as well as** its 'data' reference.
 
-Similarly, in the Web Component's 'my-invoice-timeline-viewModel.js' file, redefine 'self.items' as follows:
+Similarly, in the Web Component's 'my-invoice-timeline-viewModel.js' file, rewrite this statement:
+
+```js #button { border: none; }
+var items = ko.observableArray(JSON.parse(data));
+```
+
+...to the following, that is, we are no longer receiving the data from the comnstructor:
 
 ```js #button { border: none; }
 self.items = ko.observableArray();
