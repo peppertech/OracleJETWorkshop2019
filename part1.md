@@ -174,7 +174,7 @@ self.referenceObjects = [{value: currentDate}];
              style='width:100%;height:350px'>
 </oj-timeline>
 ```
-5. For the above to work, in particular, for the Timeline component to be loaded, make sure to include 'ojs/ojtimeline' at the end of the 'define' block in the 'my-invoice-timeline-viewModel.js' file, as shown below:
+5. For the above to work, in particular, for the Timeline component to be loaded, make sure to include a reference to 'ojs/ojtimeline' at the end of the 'define' block in the 'my-invoice-timeline-viewModel.js' file, as shown below:
 
 ```js #button { border: none; }
 define(
