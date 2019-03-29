@@ -108,15 +108,24 @@ When you have completed the desired changes to the settings file, and your custo
 
 ## 3: The basics
 
-Now that you've looked over the settings file, and how the files are aggregated into a file .css file when compiled, it's time to start making changes.
+Now that you've looked over the settings file, and how the files are aggregated into a single .css file when compiled, it's time to start making changes.
 
 ### (a) Brand color
 
-1. In the settings file (_mytheme.web.settings.scss) search for the variable *brandColor*.  Go to the third instance of the name.  It should take you to approximately line 291 in the file, and looks like this:
+So you can see changes happening as you make them, run the following command from the root of your project:
+
+```js
+ojet serve --themes=myTheme:all
+```
+**TIP:** The above command will build and serve the project using the specific theme that you've stated, as well as all of the variations, like Android, iOS, Windows, and Web (the default).  If you only want to build and test for web, you can change the last argument to be *web* instead of *all*
+
+1. In the settings file (_mytheme.web.settings.scss) search for the variable *$brandColor*.  Go to the third instance of the name.  It should take you to approximately line 291 in the file, and looks like this:
 
 ![brandcolor variable](images/p2-img003.png);
 
-Uncomment the line for this variable, as well as all of the 
+Uncomment the line for this variable, as well as all of the color variables between this and the start of the *DVT Colors* section.
+
+![uncommented variables up to the DVT Colors](images/p2-img004.png)
 
 ### (b) Font-family (web fonts)
 
