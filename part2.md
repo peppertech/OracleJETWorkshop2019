@@ -16,6 +16,11 @@ For this part of the workshop, we will assume that you have already taken Part I
 
 If you do not have JET installed, please go back to Part I and follow the steps through at least section 1b.
 
+It is also assumed that you already know something about [SASS](http://sass-lang.com/) (Syntactically Awesome StyleSheets). It's not a requirement that you know SASS for this workshop, but if you go any deeper into creating your own theme, you will need to know SASS itself. Some good resources for learning about SASS can be found at:
+
+* [SASS Documentation](http://sass-lang.com/documentation/file.SASS_REFERENCE.html)
+* [YouTube video series](https://www.youtube.com/playlist?list=PL2CB1F80266E986EA)
+
 ### (a) Downloading the sample project
 
 The workshop will use a sample project that has already been put together for you. This project has every JET UI component included in it so that you can very quickly see the effect your custom theme changes will have on JET itself.
@@ -63,12 +68,9 @@ After your theme has been created, look in the /src folder and you should now se
 
 ![mytheme folder structure](images/p2-img002.png)
 
-
 **Tip:** The /themes directory that you will see off of the root of the project can, and should, be ignored. It's created as part of the build process. You should not edit or change files in this directory as they will be overwritten. Always do your development work in the /src folder.
 
 You are now ready to start making your own theme!
-
-![Testing image only](images/pic-001.jpg)
 
 **Note:** Make sure you have a CSS editor, such as Visual Studio or Apache NetBeans, and open the sources created in step 1 above. Simply using Notepad will not provide the syntax coloring and other helpful CSS editor features. 
 
@@ -90,15 +92,31 @@ For this workshop, you are going to focus on the /web theme only.  You should ex
 
 As you will read in the comments at the top of this file, this is the main aggregator for any other SASS source files that you will create for your theme.
 
-The way that theming works in JET, is that the base Alta theme is available by default, and then changes are made to override the various settings where wanted.  Anything that is not overridden will be managed by the base .scss source.
+The way that theming works with JET, is that the base Alta theme is available by default, and then changes are made to override the various settings where wanted.  Anything that is not overridden will be managed by the base .scss source.
 
-
+The overridding settings file in this case, is called *_myTheme.web.settings.scss*
 
 ### (b) The settings file
 
+Open the *_myTheme.web.settings.scss* file in an editor of your choice.
+
+**Tip:** You may wonder why the settings filename starts with an underscore ( _ ).  In the SASS world, this tells the SASS compiler that this is a *partial* file and that it should not be compiled by itself into a .css file. It must be combined with something else.
+
+One of the first things you will see about the settings file is that it's very large.  There is a lot of information in this one file.  If you plan to create a completely custom theme, it's recommended that you read through the comments in this file completely.  Naming conventions, path structures, and best practices are all discussed throughout the document. It is also recommended that you read the [Theming Chapter of the JET Developers Guide](http://www.oracle.com/pls/topic/lookup?ctx=jet620&id=GUID-E42E9B44-CD53-41D5-A386-9E941A9471CE). 
+
+When you have completed the desired changes to the settings file, and your custom theme looks the way you want it to. It's recommended that you remove all of the remaining commented variables to decrease the size of the file and help with future compilation times.
+
 ## 3: The basics
 
+Now that you've looked over the settings file, and how the files are aggregated into a file .css file when compiled, it's time to start making changes.
+
 ### (a) Brand color
+
+1. In the settings file (_mytheme.web.settings.scss) search for the variable *brandColor*.  Go to the third instance of the name.  It should take you to approximately line 291 in the file, and looks like this:
+
+![brandcolor variable](images/p2-img003.png);
+
+Uncomment the line for this variable, as well as all of the 
 
 ### (b) Font-family (web fonts)
 
@@ -135,3 +153,4 @@ The way that theming works in JET, is that the base Alta theme is available by d
 
 ### (f) Tweak the Web Component
 
+![can there ever be enough Pugs in the world?](images/pic-001.jpg)
