@@ -639,7 +639,7 @@ The Web Component functions correctly and provides real data in our Oracle JET C
 2. Select the 'my-invoice-timeline' folder and use a Zip utility to compress it into a ZIP file. as shown below:
 
 <table><tr><td>   
-<img src="images/pic-011.png" alt="alt text" width="500" height="371">
+<img src="images/pic-012.png" alt="alt text" width="500" height="371">
 </td></tr></table>
 
 ### (b) Set Up the Service Provider
