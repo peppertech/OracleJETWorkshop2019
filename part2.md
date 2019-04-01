@@ -137,7 +137,7 @@ Save your changes and watch what happens in the browser. Click on the buttons an
 
 By default the JET themes use the System font for each platform that you run your app on.  A new trend if web app development is to use a Web Font instead.
 
-In the settings file again, search for the $fontFamily variable. Go to the second instance that is found. It should be at approximately line 411 in the file, and will look like the image below.  Here you will see the defaults for Apple(Mac), Windows, and a fallback to Hevetica Neue as a default.
+In the settings file again, search for the *$fontFamily* variable. Go to the second instance that is found. It should be at approximately line 411 in the file, and will look like the image below.  Here you will see the defaults for Apple(Mac), Windows, and a fallback to Hevetica Neue as a default.
 
 ![$fontFamily variable](images/p2-img006.png)
 
@@ -179,8 +179,36 @@ Save the file and take a look at the application running in the browser again. T
 
 ### (c) Font colors
 
+Now that you have a nice new web font added to your theme, it's time to add a little more color to your theme by making changes to the font color variables.
+
+In the settings file, search for *Text Color* string. Go to the first instance that you find.  This should be at approximately line 363 of the file.
+
+Uncomment the $textColorBase variable and all $textColor variables 1 thru 7. Allowing $textColor1 thru $textColor7 to also be set, allows the proper gradients to be generated based off of the new $textColorBase variable. It will look like the image below when updated.
+
+![text color variables](images/p2-img012.png)
+
+Change the value for the $textColorBase variable to be **#BD1550**
+
+Save the changes and take a look at the results in the browser.
+
+That definitely added some color to the page, but maybe just a little to much. Notice the Font Icon (little houses) section and the text color for the input fields inside the message section, further down the page.  They are both red as well now.
+
+Going back to the settings file, go to the second instance of the *Text Colors* search results.  This will take you to approximately line 458 in the file.
+
+Uncomment the *$textColor* variable and change it's color from $textColor3, to be **#000000**.
+
+![textColor changed to black](images/p2-img013.png)
+
+Save the changes and take another look at the browser to see the new look.
 
 ### (d) Buttons
+
+The final area that you are going to change in your theme is the styling of the default buttons.  You will see all different kinds of button styles on various websites across the Internet.  Most often, the border radius for the button corners is one of the most distinctive differences.  You are going to change the default button in your them to have rounded ends, instead of the existing more square look for the default Alta theme that JET distributes with.
+
+Back in the settings file, search for *$buttonBorderRadius* and go to the first instance that you find.  It will be at approximately line 1242 of the file.
+
+
+
 
 
 ## 4: Loading your custom theme in Visual Builder
