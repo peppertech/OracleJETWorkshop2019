@@ -207,11 +207,20 @@ The final area that you are going to change in your theme is the styling of the 
 
 Back in the settings file, search for *$buttonBorderRadius* and go to the first instance that you find.  It will be at approximately line 1242 of the file.
 
+Take a few minutes to look over all of the different variables that are available for just working with Buttons, in the JET theming source.  There are over 200 lines of code here that covers all of the possible button states (hover, selected, active, etc.) as well as different kinds of buttons like outlined, half-chrome, or full-chrome.  You can do a lot of customizing in this area.  For this workshop you are only going to change one variable.
+
+Uncomment and change the value of the *$buttonBorderRadius* from $mediumBorderRadius to **25px**
+
+The settings file should look like the below image, after making the above changes.
+
+![new button border radius](images/p2-img014.png)
+
+Your ThemeStarter application should now look like the below image with all of the changes made.
+
+![custom theme](images/p2-img015.png)
 
 
-
-
-## 4: Loading your custom theme in Visual Builder
+## 4: Using your custom theme in Visual Builder
 
 
 Can there ever be enough Pugs in the world!?
