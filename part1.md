@@ -655,7 +655,7 @@ module.exports = function (configObj) {
 };
 ```
 
-3. Run the below, in the root of the project, which produces the minified component version, as well as a ZIP file in the root of the project, as described above.
+3. Run the below, in the root of the project, which will build the Web Component and also provide a ZIP file in the root of the project, as described above.
 
 ```js #button { border: none; }
 ojet build component my-invoice-timeline
