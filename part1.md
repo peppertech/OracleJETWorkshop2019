@@ -636,16 +636,29 @@ The Web Component functions correctly and provides real data in our Oracle JET C
   "description": "A timeline component for viewing invoice creation dates and type of payment method.",
 ```
 
-2. Select the 'my-invoice-timeline' folder and use a Zip utility to compress it into a ZIP file. as shown below:
-
-<table><tr><td>   
-<img src="images/pic-012.png" alt="alt text" width="500" height="202">
-</td></tr></table>
-
-**Note:** On Mac OSX, a handy ZIP command to use is the following:
+2. Go to "scripts/hooks/after_component_build.js" and replace the content with the below, so that a ZIP file will be created containing your Web Component, after the build of the Web Component completes:
 
 ```js #button { border: none; }
-zip -r my-invoice-timeline.zip . -x ".*" -x "__MACOSX"
+'use strict';
+const fs = require('fs-extra');
+const archiver = require('archiver');
+module.exports = function (configObj) {
+  return new Promise((resolve, reject) => {
+    const destination = 'my-invoice-timeline-1.0.0.zip';
+    const output = fs.createWriteStream(destination);
+    const archive = archiver('zip');
+    archive.pipe(output);
+    archive.directory('web/js/jet-composites/my-invoice-timeline/1.0.0', false);
+    archive.finalize();
+    resolve();
+  });
+};
+```
+
+3. Run the below, in the root of the project, which produces the minified component version, as well as a ZIP file in the root of the project, as described above.
+
+```js #button { border: none; }
+ojet build component my-invoice-timeline
 ```
 
 ### (b) Set Up the Service Provider
