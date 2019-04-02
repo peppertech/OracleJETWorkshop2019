@@ -645,7 +645,7 @@ The Web Component functions correctly and provides real data in our Oracle JET C
 **Note:** On Mac OSX, a handy ZIP command to use is the following:
 
 ```js #button { border: none; }
-zip -r dir.zip . -x ".*" -x "__MACOSX"
+zip -r my-invoice-timeline.zip . -x ".*" -x "__MACOSX"
 ```
 
 ### (b) Set Up the Service Provider
