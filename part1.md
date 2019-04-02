@@ -636,7 +636,7 @@ The Web Component functions correctly and provides real data in our Oracle JET C
   "description": "A timeline component for viewing invoice creation dates and type of payment method.",
 ```
 
-2. Go to "scripts/hooks/after_component_build.js" and replace the content with the below, so that a ZIP file will be created containing your Web Component, after the build of the Web Component completes:
+2. We're going to hook into the build process, to generate a ZIP file of the Web Component as part of its build process. Go to 'scripts/hooks/after_component_build.js' and replace the content with the below, so that a ZIP file will be created containing your Web Component, when the build of the Web Component completes:
 
 ```js #button { border: none; }
 'use strict';
