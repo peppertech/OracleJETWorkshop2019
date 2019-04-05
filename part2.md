@@ -40,22 +40,24 @@ When the restore command is completed, you should see something like the image b
 
 ### (b) Running the sample project
 
-As with your previous work with the JET CLI, you can build and serve the project. Run the below command to see the what the project looks like by default.
+As with your previous work with the JET CLI, you can build and serve the project. Run the below command to see what the project looks like by default.
 
 ```js
 ojet serve
 ```
+**TODO** (add more about what the project contains)
+
 After you've had a look around, press Ctrl-C in the command window to stop the server.
 
 ### (c) Add SASS
 
-Now that you have the sample project working, let's set things up for working with SASS.  From the command line, run the below command.
+Now that you have the sample project working, let's set things up for working with SASS. **TODO**(Add something about what SASS does for you) From the command line, run the below command.
 
 ```js
 ojet add sass
 ```
 
-You will see the library *node-sass* being installed. Once it's completed, you're ready to create your own theme.
+You will see the library *node-sass* being installed. This library is used for actaully compiling your .scss (SASS) source code into CSS that the application use. Once it's completed, you're ready to create your own theme.
 
 ### (d) Create custom theme
 
@@ -135,7 +137,7 @@ Save your changes and watch what happens in the browser. Click on the buttons an
 
 ### (b) Font-family (web fonts)
 
-By default the JET themes use the System font for each platform that you run your app on.  A new trend if web app development is to use a Web Font instead.
+By default the JET themes use the System font for each platform that you run your app on.  A new trend in web app development is to use a Web Font instead.
 
 In the settings file again, search for the *$fontFamily* variable. Go to the second instance that is found. It should be at approximately line 411 in the file, and will look like the image below.  Here you will see the defaults for Apple(Mac), Windows, and a fallback to Hevetica Neue as a default.
 
@@ -159,7 +161,7 @@ Once you select this font, a panel will show up at the bottom of your browser. C
 
 ![ubuntu font usage panel](images/p2-img008.png)
 
-Copy the text for the **<link>** from the panel, as shown with the arrow in the above image.
+Copy the text for the **\<link>** from the panel, as shown with the arrow in the above image.
 
 In your editor, open the *src/index.html* file, and paste this new link reference into the **\<head>** section of the file just under the reference to the */democss/app.css* stylesheet. It will look like the image below when saved.
 
