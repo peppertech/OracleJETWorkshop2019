@@ -660,14 +660,3 @@ module.exports = function (configObj) {
 ```js #button { border: none; }
 ojet build component my-invoice-timeline
 ```
-
-### (b) Set Up the Service Provider
-
-### (c) Create a Variable
-
-### (d) Install the Web Component
-
-### (e) Use the Web Component
-
-### (f) Tweak the Web Component
-
