@@ -660,3 +660,5 @@ module.exports = function (configObj) {
 ```js #button { border: none; }
 ojet build component my-invoice-timeline
 ```
+
+You now have a ZIP file containing your Web Component, ready to be uploaded into Visual Builder or other applications based on Oracle JET Core.
