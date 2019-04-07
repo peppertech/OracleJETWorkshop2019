@@ -409,27 +409,39 @@ The data that we're passing into the Web Component from the containing applicati
 2. Create another Prototype function that extracts the array data from the DataProvider, as shown below, in the Web Component's 'my-invoice-timeline-viewModel.js' file:
 
 ```js #button { border: none; }
-// Set special styles and thumbnail images based on specific values in the data.
+// mapping the data from the REST service into a format that the timeline expects.
+// Also setting special styles and thumbnail images based on specific values in the data.
 ExampleComponentModel.prototype._shapeTimelineData = function (sourceRow) {
-  // change the border style and thumbnail color based on type of payment method
-  var invoicePaymentMethod = {
-    Check: {
-      color: 'green',
-      img: require.toUrl('my-invoice-timeline/resources/images/box_01.png')
-    },
-    Electronic: {
-      color: 'red',
-      img: require.toUrl('my-invoice-timeline/resources/images/box_02.png')
-    }
-  };
-  return {
-    id: sourceRow.InvoiceId,
-    title: sourceRow.InvoiceNumber,
-    start: sourceRow.CreationDate,
-    description: sourceRow.Description,
-    thumbnail: invoicePaymentMethod[sourceRow.PaymentMethod].img,
-    svgStyle: 'border-color:' + invoicePaymentMethod[sourceRow.PaymentMethod].color + ';'
-  };
+    // change the border style and thumbnail color based on type of status type
+    var status = {
+        Requested: {
+            color: 'green',
+            img: require.toUrl('my-timeline/resources/images/box_01.png')
+        },
+        Denied: {
+            color: 'red',
+            img: require.toUrl('my-timeline/resources/images/box_02.png')
+        }
+    };
+    // Alternate option, changes the style and thumbnail based on transaction source.
+    var transactionSourceDetails = {
+        Manual: {
+            color: 'green',
+            img: require.toUrl('my-timeline/resources/images/box_01.png')
+        },
+        Electronic: {
+            color: 'red',
+            img: require.toUrl('my-timeline/resources/images/box_02.png')
+        }
+    };
+    return {
+        id: sourceRow.id,
+        title: sourceRow.BusinessUnit,
+        start: sourceRow.TransactionDate,
+        description: sourceRow.totalAmount,
+        thumbnail: status[sourceRow.status].img,
+        svgStyle: 'border-color:' + status[sourceRow.status].color + ';'
+    };
 };
 ```
 
