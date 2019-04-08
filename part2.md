@@ -1,5 +1,5 @@
 # Workshop: Creating a Custom Theme with SASS
-This workshop will focus on the tools and techniques for creating a custom theming using the SASS source code provided with the Oracle JET distribution.
+This workshop will focus on the tools and techniques for creating a custom theme using the SASS source code provided with the Oracle JET distribution and the SASS features built into the ojet cli.
 
 While this topic is slightly dated as we move toward the use of CSS Variables for theming (available late 2019) the concepts and tooling will be very similar and this is a good topic to have a basic understanding of.
 
@@ -10,11 +10,16 @@ The custom theme changes will focus on the following areas:
 * Font-size/color
 * Button characteristics
 
+When you've completed the tasks listed below, your sample project will look like this.
+
+![custom theme](images/p2-img015.png)
+
+
 ## 1: Get Started
 
 For this part of the workshop, we will assume that you have already taken Part I, and have JET properly installed and working.
 
-If you do not have JET installed, please go back to Part I and follow the steps through at least section 1b.
+If you do not have JET installed, please go [back to Part I](/part1.md) and follow the steps through at least section 1b.
 
 It is also assumed that you already know something about [SASS](http://sass-lang.com/) (Syntactically Awesome StyleSheets). It's not a requirement that you know SASS for this workshop, but if you go any deeper into creating your own theme, you will need to know SASS itself. Some good resources for learning about SASS can be found at:
 
@@ -51,13 +56,15 @@ After you've had a look around, press Ctrl-C in the command window to stop the s
 
 ### (c) Add SASS
 
-Now that you have the sample project working, let's set things up for working with SASS. **TODO**(Add something about what SASS does for you) From the command line, run the below command.
+Now that you have the sample project working, let's set things up for working with SASS. If you aren't already familiar with what SASS does, and how it works, please use the resources listed at the beginning of the workshop under the *Get Started* section. 
+
+From the command line, run the below command.
 
 ```js
 ojet add sass
 ```
 
-You will see the library *node-sass* being installed. This library is used for actaully compiling your .scss (SASS) source code into CSS that the application use. Once it's completed, you're ready to create your own theme.
+You will see the library *node-sass* being installed. This library is used for actually compiling your .scss (SASS) source code into CSS that the application use. Once it's completed, you're ready to create your own theme.
 
 ### (d) Create custom theme
 
@@ -68,7 +75,7 @@ ojet create theme myTheme
 ```
 After your theme has been created, look in the /src folder and you should now see a new /themes folder and inside of that, your /myTheme folder.
 
-![mytheme folder structure](images/p2-img002.png)
+![myTheme folder structure](images/p2-img002.png)
 
 **Tip:** The /themes directory that you will see off of the root of the project can, and should, be ignored. It's created as part of the build process. You should not edit or change files in this directory as they will be overwritten. Always do your development work in the /src folder.
 
@@ -96,7 +103,7 @@ As you will read in the comments at the top of this file, this is the main aggre
 
 The way that theming works with JET, is that the base Alta theme is available by default, and then changes are made to override the various settings where wanted.  Anything that is not overridden will be managed by the base .scss source.
 
-The overridding settings file in this case, is called *_myTheme.web.settings.scss*
+The overriding settings file in this case, is called *_myTheme.web.settings.scss*
 
 ### (b) The settings file
 
@@ -193,7 +200,7 @@ Change the value for the $textColorBase variable to be **#BD1550**
 
 Save the changes and take a look at the results in the browser.
 
-That definitely added some color to the page, but maybe just a little to much. Notice the Font Icon (little houses) section and the text color for the input fields inside the message section, further down the page.  They are both red as well now.
+That definitely added some color to the page, but maybe just a little to much. Notice the Icon Font (little houses) section and the text color for the input fields inside the message section, further down the page.  They are both red as well now.
 
 Going back to the settings file, go to the second instance of the *Text Colors* search results.  This will take you to approximately line 458 in the file.
 
@@ -223,6 +230,7 @@ Your ThemeStarter application should now look like the below image with all of t
 
 
 ## 4: Using your custom theme in Visual Builder
+
 
 
 Can there ever be enough Pugs in the world!?
