@@ -50,7 +50,7 @@ As with your previous work with the JET CLI, you can build and serve the project
 ```js
 ojet serve
 ```
-This project contains multiple pages that have a vast majority of the JET components included in them.  The *All* page is just that, it contains all of the components. The other pages have the same components broken out into smaller categories.  The project also has a custom *after-build* hook script that packages the custom theme that you are going to write during this workshop, into a .zip file so that you can share it or re-use it in other applications. Specifically with a Visual Builder application, as you will see at the end of the workshop.
+This project contains multiple pages that have a vast majority of the JET components included in them.  The *All* page is just that, it contains all of the components. The other pages have the same components broken out into smaller categories.  The project also has a custom *after_build* hook script that packages the custom theme that you are going to write during this workshop, into a .zip file so that you can share it or re-use it in other applications. Specifically with a Visual Builder application, as you will see at the end of the workshop.
 
 After you've had a look around, press Ctrl-C in the command window to stop the server.
 
@@ -231,8 +231,64 @@ Your ThemeStarter application should now look like the below image with all of t
 
 ## 4: Using your custom theme in Visual Builder
 
+For this section of the workshop, it is assumed that you already have access to a Visual Builder Cloud Service instance.
 
+**TODO** (describe how to get access if they don't already have it)
 
-Can there ever be enough Pugs in the world!?
+At the beginning of the workshop, it was mentioned that this project contains a modified *after_build* hook script that takes the results of your custom theme and packages it as a .zip file.  If you want to look at the hook file, it's looked in the */scripts/hooks/* folder
 
-![can there ever be enough Pugs in the world?](images/pic-001.jpg)
+![hooks folder structure](images/p2-img016.png)
+
+The resulting .zip file, is placed in the root of your application. The file is updated each time you do a build or serve command.
+
+![location of theme.zip](images/p2-img017.png)
+
+To share your new theme with a Visual Builder application, you are going to do two things
+
+1) Add the theme.zip file as a resource
+2) Add a reference to the Ubuntu Web Font to the index.html file
+
+After opening your Visual Builder(VB) project, and creating a *Web Application*, you are going to see a default structure similar to the image below. Expand out the structure under *resources* and right-click on the *CSS* folder to see the import option, as shown below.
+
+![import to css resource](images/p2-img018.png)
+
+Clink on the import option and you will be shown a dialog that allows you to drag and drop a .zip file, or select one from your local computer.  Click on the *Upload a file...* icon and navigator on your computer to the root of your project, where the theme.zip file will be located.  Select that file.
+
+![uploading your theme.zip file](images/p2-img019.png)
+
+The theme.zip file will be processed in the background and then added to your VB projects resources. When the processing is completed (usually about 30 seconds to a minute), you will see *myTheme* as a new directory under the *CSS* resources.
+
+![new theme added](images/p2-img020.png)
+
+Once you see this new resource available, you can go to the *General Settings* tab for your Web application, and change the *theme* option to use the *myTheme* resource.
+
+To get to the *General Settings* tab in your application, click on the name of your Web Application ('themetesting' in the above image) and then click on the *Settings* options which looks like a *gear* icon.
+
+To see your new theme in action, add a few components to a test page.  Since you changes things for text, and a button, it will be easiest to see the new theme in use if you add at least one *Header* element and one *button* element.
+
+At this point, your test page may look something like the image below.
+
+![test vb page](images/p2-img021.png)
+
+If you look closely at the *Header* element in the example above, you'll notice that the lowercase **T** doesn't show the Ubuntu web font styling that we should expect.
+
+When you created your custom theme, you used the CDN (Content Delivery Network) approach to adding a reference to the web font libraries.  This a quick and efficient way to work with web fonts, but it does not package the font libraries directly into your theme.  You could also have downloaded the libraries themselves and added to your theme.  Because the CDN was used, there is one more step to finish adding your custom theme to your VB project.
+
+Right below the *Settings* tab (the gear icon) for your web application, is the *HTML* tab.  Click on that and you will be shown the *source* for the index.html file that your project uses at runtime. You are going to copy the *\<link>* element that you placed into your sample theme project's index.html file, into your VB project. Here is the link element again so you don't have to go back and find it in your project.
+
+```html
+<link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">    
+```
+Place this line just below the existing link element that points to the *app.css* file. It will look like the image below.
+
+![update to index.html](images/p2-img022.png)
+
+Go back to the designer for your sample page, and refresh it. If you're not sure how to refresh the page, click on the arrow icon at the top of the desinger area. It looks like the image below.
+
+![refresh icon](images/p2-img023.png)
+
+If you take a look at that lowercase **T** again, you should see the properly styled font, which shows that the web font is correctly being used now.
+
+![web font being used](images/p2-img025.png)
+
+This concludes this part of the workshop. You should be able to take the basic skills learned during this workshop and expand on them to implement a more complex custom theme that can be used in your applications.
