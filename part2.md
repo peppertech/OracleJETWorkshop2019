@@ -50,7 +50,7 @@ As with your previous work with the JET CLI, you can build and serve the project
 ```js
 ojet serve
 ```
-**TODO** (add more about what the project contains)
+This project contains multiple pages that have a vast majority of the JET components included in them.  The *All* page is just that, it contains all of the components. The other pages have the same components broken out into smaller categories.  The project also has a custom *after-build* hook script that packages the custom theme that you are going to write during this workshop, into a .zip file so that you can share it or re-use it in other applications. Specifically with a Visual Builder application, as you will see at the end of the workshop.
 
 After you've had a look around, press Ctrl-C in the command window to stop the server.
 
