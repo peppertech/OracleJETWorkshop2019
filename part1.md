@@ -459,7 +459,7 @@ self._extractArrayFromDataProvider(self.properties.items, self._shapeTimelineDat
 4. In the code in step 2 above, you're referring to images. These can be any 32x32 pixel images, or you can download those used in creating these instructions [by clicking here](https://github.com/peppertech/OracleJETWorkshop2019/blob/master/images/images.zip), unzip and put the images in the Web Component's 'resources/images' folder, as shown below:
 
 <table><tr><td>   
-<img src="images/pic-008.png" alt="alt text" width="500" height="500">
+<img src="images/pic-016.png" alt="alt text" width="500" height="653">
 </td></tr></table>
 
 5. You need to make a few small tweaks to 'src/js/appControler.js', since you're working with different data now, i.e., 'erpData.json' has different kind of data than 'data.json' and therefore needs to be received slightly differently. Start by pointing to the 'erpData.json' where before you were referring to 'data.json':
