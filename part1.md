@@ -411,22 +411,22 @@ ExampleComponentModel.prototype._shapeTimelineData = function (sourceRow) {
     var status = {
         Requested: {
             color: 'green',
-            img: require.toUrl('my-timeline/resources/images/box_01.png')
+            img: require.toUrl('my-invoice-timeline/resources/images/box_01.png')
         },
         Denied: {
             color: 'red',
-            img: require.toUrl('my-timeline/resources/images/box_02.png')
+            img: require.toUrl('my-invoice-timeline/resources/images/box_02.png')
         }
     };
     // Alternate option, changes the style and thumbnail based on transaction source.
     var transactionSourceDetails = {
         Manual: {
             color: 'green',
-            img: require.toUrl('my-timeline/resources/images/box_01.png')
+            img: require.toUrl('my-invoice-timeline/resources/images/box_01.png')
         },
         Electronic: {
             color: 'red',
-            img: require.toUrl('my-timeline/resources/images/box_02.png')
+            img: require.toUrl('my-invoice-timeline/resources/images/box_02.png')
         }
     };
     return {
