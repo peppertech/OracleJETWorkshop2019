@@ -151,13 +151,13 @@ define(
 
 **Note:** In the above, note that we added 'text!./data/data.json' to the define block **and** we added 'data' to the callback function. Both are needed! And note that the reference to the data.json file is the second parameter in the define block **and** in the callback function.
         
-3. In the 'my-invoice-timeline-viewModel.js' file, replace the example variable 'self.messageText' with the following content, copied directly from line 8 to 15 in 'demo.js' from the [Single Series Timeline from the Oracle JET Cookbook](https://www.oracle.com/webfolder/technetwork/jet/jetCookbook.html?component=timeline&demo=basicTimeline):
+3. In the 'my-invoice-timeline-viewModel.js' file, replace the example variable 'self.messageText' with the following content, copied and pasted directly from line 8 to 15 in 'demo.js' from the [Single Series Timeline from the Oracle JET Cookbook](https://www.oracle.com/webfolder/technetwork/jet/jetCookbook.html?component=timeline&demo=basicTimeline):
 
 <table><tr><td>   
 <img src="images/pic-013.png" alt="alt text" width="700" height="255">
 </td></tr></table>
 
-After copying the above, change the variable 'items' so that the reference to the 'data' initializes it:
+After copying and pasting the above, change the variable 'items' so that the reference to the 'data' initializes it:
 
 ```js #button { border: none; }
 var items = ko.observableArray(JSON.parse(data));
