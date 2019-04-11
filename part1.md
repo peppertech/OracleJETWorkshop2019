@@ -569,7 +569,7 @@ $.getJSON(url).then(function (results) {
 
 2. Change the reference of the URL to a URL that your instructor will provide.
 
-**TIP:** If your real data requires basic authentication, you would set it up similar to the below:
+**Tip:** If your real data requires basic authentication, you would set it up similar to the below:
 
 ```js #button { border: none; }
 $.ajax
