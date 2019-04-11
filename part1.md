@@ -163,24 +163,12 @@ After copying and pasting the above, change the variable 'items' so that the ref
 var items = ko.observableArray(JSON.parse(data));
 ```
 
-4. In the View, that is, the 'my-invoice-timeline-view.html' file, delete all the existing content, and drop in a Timeline component, here it is copied and pasted directly from the [Single Series Timeline from the Oracle JET Cookbook](https://www.oracle.com/webfolder/technetwork/jet/jetCookbook.html?component=timeline&demo=basicTimeline).
+4. In the View, that is, the 'my-invoice-timeline-view.html' file, delete all the existing content, and drop in a Timeline component, copied and pasted directly, from line 30 to 44, in 'demo.html', from [Single Series Timeline from the Oracle JET Cookbook](https://www.oracle.com/webfolder/technetwork/jet/jetCookbook.html?component=timeline&demo=basicTimeline):
 
-```html #button { border: none; }
-<oj-timeline id='tline' 
-             minor-axis='{
-               "scale": "weeks",
-               "zoomOrder": ["months", "weeks", "days"]
-             }'
-             major-axis.scale='quarters'
-             start='[[new Date("Jan 1, 2010").toISOString()]]'
-             end='[[new Date("Dec 31, 2010").toISOString()]]'
-             selection-mode='single'
-             reference-objects='[[referenceObjects]]'
-             selection='["e4"]'
-             series='[[timelineSeries]]'
-             style='width:100%;height:350px'>
-</oj-timeline>
-```
+<table><tr><td>   
+<img src="images/pic-014.png" alt="alt text" width="700" height="473">
+</td></tr></table>
+
 5. For the above to work, in particular, for the Timeline component to be loaded, make sure to include a reference to 'ojs/ojtimeline' at the end of the 'define' block in the 'my-invoice-timeline-viewModel.js' file, as shown below:
 
 ```js #button { border: none; }
