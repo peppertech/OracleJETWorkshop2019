@@ -483,8 +483,14 @@ self.dataArray(new ArrayDataProvider(results.items, {keyAttributes: 'InvoiceId'}
 6. To be able to easily see the data in the Timeline, change the hardcoded start and end date in 'my-invoice-timeline-view.html' to the following. 
 
 ```html #button { border: none; }
-start='[[new Date("November 1, 2013").toISOString()]]'
-end='[[new Date("Jan 31, 2014").toISOString()]]'
+start='[[new Date("January 1, 2019").toISOString()]]'
+end='[[new Date("Jan 31, 2020").toISOString()]]'
+```
+
+Also, in 'my-invoice-timeline-view.js', change the current date as follows:
+
+```js #button { border: none; }
+self.currentDateString = "April 1, 2019";
 ```
 
 In the next section, we will provide UI components for setting the start and end date dynamically.
