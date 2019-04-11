@@ -139,15 +139,17 @@ We are going to take the [Single Series Timeline from the Oracle JET Cookbook](h
 <img src="images/pic-004.png" alt="alt text" width="500" height="494">
 </td></tr></table>
 
-2. Load the 'data.json' file into your Web Component by using the 'text!' protocol, as shown below, in the 'my-invoice-timeline-viewModel.js' file. In addition, make sure to reference the 'data.json' file in the callback function, as 'data', for example, shown below, in the same order as in the define statement:
+2. Load the 'data.json' file into your Web Component by using the 'text!' protocol, as shown below, in the 'my-invoice-timeline-viewModel.js' file. **In addition**, make sure to reference the 'data.json' file in the callback function, as 'data', for example, shown below, in the same order as in the define statement:
 
 ```js #button { border: none; }
 define(
     ['knockout', 
-     **'text!./data/data.json'**, 
+     'text!./data/data.json', 
      'jquery', 'ojL10n!./resources/nls/my-invoice-timeline-strings'], 
-        function (ko, **data**, $, componentStrings) {
+        function (ko, data, $, componentStrings) {
 ```
+
+**Note:** In the above, note that we added 'text!./data/data.json' to the define block **and** we added 'data' to the callback function. Both are needed! And note that the reference to the data.json file is the second parameter in the define block **and** in the callback function.
         
 3. In the 'my-invoice-timeline-viewModel.js' file, replace the example variable 'self.messageText' with the following content, which is copied directly from the  [Single Series Timeline from the Oracle JET Cookbook](https://www.oracle.com/webfolder/technetwork/jet/jetCookbook.html?component=timeline&demo=basicTimeline), with the 'data' passed in from the step above into the 'items' variable:
 
