@@ -151,17 +151,16 @@ define(
 
 **Note:** In the above, note that we added 'text!./data/data.json' to the define block **and** we added 'data' to the callback function. Both are needed! And note that the reference to the data.json file is the second parameter in the define block **and** in the callback function.
         
-3. In the 'my-invoice-timeline-viewModel.js' file, replace the example variable 'self.messageText' with the following content, which is copied directly from the  [Single Series Timeline from the Oracle JET Cookbook](https://www.oracle.com/webfolder/technetwork/jet/jetCookbook.html?component=timeline&demo=basicTimeline), with the 'data' passed in from the step above into the 'items' variable:
+3. In the 'my-invoice-timeline-viewModel.js' file, replace the example variable 'self.messageText' with the following content, copied directly from the  [Single Series Timeline from the Oracle JET Cookbook](https://www.oracle.com/webfolder/technetwork/jet/jetCookbook.html?component=timeline&demo=basicTimeline)
+
+<table><tr><td>   
+<img src="images/pic-013.png" alt="alt text" width="500" height="182">
+</td></tr></table>
+
+After copying the above, change the variable 'items' so that the reference to the 'data' initializes it:
 
 ```js #button { border: none; }
 var items = ko.observableArray(JSON.parse(data));
-self.timelineSeries = ko.computed(function () {
-    return [{id: 's1', emptyText: 'No Data.', label: 'Oracle Events', items: items()}]
-});
-//
-self.currentDateString = "Feb 1, 2010";
-var currentDate = new Date(self.currentDateString).toISOString();
-self.referenceObjects = [{value: currentDate}];
 ```
 
 4. In the View, that is, the 'my-invoice-timeline-view.html' file, delete all the existing content, and drop in a Timeline component, here it is copied and pasted directly from the [Single Series Timeline from the Oracle JET Cookbook](https://www.oracle.com/webfolder/technetwork/jet/jetCookbook.html?component=timeline&demo=basicTimeline).
