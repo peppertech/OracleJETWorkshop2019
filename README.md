@@ -58,9 +58,9 @@ You are now ready to get started with Oracle JET!
 
 ### (c) Pick a Workshop
 
-Click [here](part1.md) to go to part 1, on Web Component development.
+   * Click [here](part1.md) to go to part 1, on Web Component development.
 
-Click [here](part2.md) to go to part 1, on techniques for custom theming.
+   * Click [here](part2.md) to go to part 2, on techniques for custom theming.
 
 
 
