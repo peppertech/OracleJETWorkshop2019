@@ -574,7 +574,7 @@ ExampleComponentModel.prototype._generateYears = function (context) {
 ```js #button { border: none; }
 self.itemSelection = ko.observableArray([]);
 
-var currentDate = new Date('Jan. 1 2014');
+var currentDate = new Date('April 1 2019');
 
 self.startYearValue = ko.observable((currentDate.getFullYear() - 1));
 self.endYearValue = ko.observable(currentDate.getFullYear() + 1);
