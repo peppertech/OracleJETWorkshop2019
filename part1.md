@@ -603,7 +603,22 @@ self._generateYears();
 
 In the previous section, you were working against local data. Now, we're going to get real data from a live demo ERP service.
 
-1. Start by creating a connection to the data using an AJAX call, with Basic authentication. While doing the below, comment out or delete your getJSON call and replace it with the below, in 'src/js/appControler.js':
+1. In the containing application's 'appControler.js' file, i.e., 'src/js/appControler.js', you have been pulling in the data from a local file, as follows:
+
+```js #button { border: none; }
+self.dataArray = ko.observable();
+
+var url = "/js/data/data.json";
+
+$.getJSON(url).then(function (results) {
+    // assign the DataProvider to the self.dataArray observable
+    self.dataArray(new ArrayDataProvider(results, {keyAttributes: 'id'}));
+})
+```
+
+2. Change the reference of the URL to a URL that your instructor will provide.
+
+**TIP:** If your real data requires basic authentication, you would set it up similar to the below:
 
 ```js #button { border: none; }
 $.ajax
@@ -620,15 +635,7 @@ $.ajax
 });
 ```
 
-**Note:** We need to be able to provide credentials, which 'getJSON' doesn't allow you to do, which is why we are switching to AJA here for a more complex call.
-
-2. From your instructor, get the username, password, and service URL and set them in 'src/js/appControler.js' as follows:
-
-```js #button { border: none; }
-var USERNAME = 'to be provided by your instructor';
-var PASSWORD = 'to be provided by your instructor';
-var SERVICE-URL = 'to be provided by your instructor';
-```
+In the above, you would need to be able to provide credentials, which 'getJSON' doesn't allow you to do, which is why we are switching to AJAX here for a more complex call.
 
 3. In the browser, you should now be able to see the same data as before, though this time it is live data coming from the demo ERP service, as shown below:
 
