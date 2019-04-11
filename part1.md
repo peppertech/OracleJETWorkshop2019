@@ -3,7 +3,7 @@ This workshop shows how to create a Web Component for
 use within an Oracle JET Core application or within Visual Builder, containing a JET Timeline component 
 that will read data from an Oracle ERP Service, showing invoice information. 
 
-Specifically, within an Oracle JET Core application, the Web Component you will create will look as follows, [using this Oracle ERP data](https://gist.githubusercontent.com/peppertech/8a9691dc68b0a1466b0b7012b86e2578/raw/6281de2f93103bbe531a6bbb7e629c964865e896/erpData.json), retrieved from a live demo Oracle ERP service:
+Specifically, within an Oracle JET Core application, the Web Component you will create will look as follows, [using this Oracle ERP data](https://gist.githubusercontent.com/peppertech/d1f80035fb040d61241359245d328659/raw/d9b085bb8cf5e4462333f313aa6cd13444dfe336/erpData.json), retrieved from a live demo Oracle ERP service:
 
 <table><tr><td>   
 <img src="images/pic-009.png" alt="alt text" width="500" height="269">
@@ -395,7 +395,7 @@ ExampleComponentModel.prototype.propertyChanged = function (context) {
 
 The data that we're passing into the Web Component from the containing application is already formatted in the structure that the Timeline component expects. This is almost never going to happen in reality. We will need to **shape** the data coming in from the REST Service to conform to the structure that the Timeline component expects. Below, you learn how to customize attributes of the Timeline component based on the data coming in, in particular, the thumbnail and styling of the Timeline component.
 
-1. Put [this static data](https://gist.githubusercontent.com/peppertech/8a9691dc68b0a1466b0b7012b86e2578/raw/6281de2f93103bbe531a6bbb7e629c964865e896/erpData.json) into a file named 'erpData.json', in the folder where you already have 'data.json', as shown below:
+1. Put [this static data](https://gist.githubusercontent.com/peppertech/d1f80035fb040d61241359245d328659/raw/d9b085bb8cf5e4462333f313aa6cd13444dfe336/erpData.json) into a file named 'erpData.json', in the folder where you already have 'data.json', as shown below:
 
 <table><tr><td>   
 <img src="images/pic-007.png" alt="alt text" width="500" height="517">
