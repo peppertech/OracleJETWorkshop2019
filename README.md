@@ -1,9 +1,9 @@
 # OracleJET Workshop 2019
 This workshop is delivered in two parts.  
 
-The first is how to create a web component for use with JET Core or Visual Builder, that contains a JET Timeline component which will read data from the Oracle ERP service showing invoice information. See [part 1 here](part1.md).
+The first is how to create a web component for use with JET Core or Visual Builder, that contains a JET Timeline component which will read data from the Oracle ERP service showing invoice information. See [part 1 here](part1.md). The focus in this workshop is on teaching you techniques and best practices for developing scalable Web Components that can be used in other contexts, in particular, Visual Builder.
 
-The second part will be focused on the techniques neede for creating custom Themes for use in JET Core applications or in Visual Builder. See [part 2 here](part2.md).
+The second part will be focused on the techniques needed for creating custom Themes for use in JET Core applications or in Visual Builder. See [part 2 here](part2.md).
 
 ## Get Started
 
