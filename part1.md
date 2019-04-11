@@ -214,6 +214,12 @@ ExampleComponentModel.prototype.propertyChanged = function(context){
 };
 ```
 
+Look at the end of the 'my-invoice-timeline-viewModel.js' file and notice that placeholders are provided for you, ready to be filled in with domain-specific content, which you will work on in the following sections.
+
+<table><tr><td>   
+<img src="images/pic-015.png" alt="alt text" width="500" height="210">
+</td></tr></table>
+
 ### (d) Use External Data
 
 Rather than providing a Web Component together with its own data, we want to be able to pass in data from outside the Web Component. In this section, as an intermediate step, we will move the 'data.json' file outside the Web Component, while in subsequent sections we will access the data via a REST endpoint.
