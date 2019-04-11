@@ -3,7 +3,7 @@ This workshop shows how to create a Web Component for
 use within an Oracle JET Core application or within Visual Builder, containing a JET Timeline component 
 that will read data from an Oracle ERP Service, showing invoice information. 
 
-Specifically, within an Oracle JET Core application, the Web Component you will create will look as follows, [using this Oracle ERP data](https://gist.githubusercontent.com/peppertech/d1f80035fb040d61241359245d328659/raw/d9b085bb8cf5e4462333f313aa6cd13444dfe336/erpData.json), retrieved from a live demo Oracle ERP service:
+Specifically, within an Oracle JET Core application, the Web Component you will create will look something like the below, [using this Oracle ERP data](https://gist.githubusercontent.com/peppertech/d1f80035fb040d61241359245d328659/raw/d9b085bb8cf5e4462333f313aa6cd13444dfe336/erpData.json), retrieved from a live demo Oracle ERP service:
 
 <table><tr><td>   
 <img src="images/pic-009.png" alt="alt text" width="500" height="269">
