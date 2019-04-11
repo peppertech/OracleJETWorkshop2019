@@ -5,7 +5,7 @@ The first is how to create a web component for use with JET Core or Visual Build
 
 The second part will be focused on the techniques neede for creating custom Themes for use in JET Core applications or in Visual Builder. See [part 2 here](part2.md).
 
-## 1: Get Started
+## Get Started
 
 All the activities in this section should be done on the command line in a Terminal window.
 
