@@ -56,7 +56,7 @@ Oracle JET Command Line Interface, version: 6.2.0
 
 You are now ready to get started with Oracle JET!
 
-### (c) Pick a Workshop
+### (c) Pick a Starting Point
 
    * Click [here](part1.md) to go to part 1, on Web Component development.
 
