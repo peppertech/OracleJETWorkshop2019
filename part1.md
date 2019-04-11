@@ -13,14 +13,16 @@ Specifically, within an Oracle JET Core application, the Web Component you will 
 
 We will use the Oracle JET 'basic' template so that we have the simplest possible Oracle JET application, enabling us to focus on component creation in the next section, and not on routing. The 'basic' template will give us an 'index.html' file, where we will design the component, with the data initially hardcoded and coming from the 'src/js/appControler.js' file.
 
-1. Run the following in the terminal:
+1. Make sure you have set up Oracle JET correctly, as explained [here](README.md)
+
+2. Run the following in the terminal:
 
 ```js #button { border: none; }
 ojet create BasicApp --template=basic
 ```
 **Note:** This process may take some time.
 
-2. CD into 'BasicApp' and run the following in the terminal and look in the browser:
+3. CD into 'BasicApp' and run the following in the terminal and look in the browser:
 
 ```js #button { border: none; }
 ojet serve
