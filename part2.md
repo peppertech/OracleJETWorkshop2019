@@ -19,7 +19,7 @@ When you've completed the tasks listed below, your sample project will look like
 
 For this part of the workshop, we will assume that you have already taken Part I, and have JET properly installed and working.
 
-If you do not have JET installed, please go [back to Part I](/part1.md) and follow the steps through at least section 1b.
+If you do not have JET installed, please go [here](/README.md) and follow the instructions outlined there.
 
 It is also assumed that you already know something about [SASS](http://sass-lang.com/) (Syntactically Awesome StyleSheets). It's not a requirement that you know SASS for this workshop, but if you go any deeper into creating your own theme, you will need to know SASS itself. Some good resources for learning about SASS can be found at:
 
