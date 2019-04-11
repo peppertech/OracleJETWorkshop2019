@@ -243,7 +243,7 @@ $.getJSON(url).then(function (results) {
 })
 ```
 
-3. For the above to work, in particular, the 'ArrayDataProvider' reference, make sure to include a reference to 'ojs/ojarraydataprovider' in the 'define' block in 'src/js/appControler.js', together with a reference in the same order to 'ArrayDataProvider' in the function callback, as shown below:
+3. For the above to work, in particular, the 'ArrayDataProvider' reference, make sure to include a reference to 'ojs/ojarraydataprovider' in the 'define' block in 'src/js/appControler.js', **together with a reference in the same order** to 'ArrayDataProvider' in the function callback, as shown below:
 
 ```js #button { border: none; }
 define(['ojs/ojcore', 'knockout', 'ojs/ojarraydataprovider', 
