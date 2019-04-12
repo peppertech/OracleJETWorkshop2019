@@ -446,7 +446,7 @@ self.currentDateString = "April 1, 2019";
 
 In the next section, we will provide UI components for setting the start and end date dynamically.
 
-7. In the browser, check that you now see the Timeline scenario working and displaying data, [this static data](https://gist.githubusercontent.com/peppertech/d1f80035fb040d61241359245d328659/raw/d9b085bb8cf5e4462333f313aa6cd13444dfe336/erpData.json), and as shown below:
+7. In the browser, check that you now see the Timeline scenario working and displaying data, [this static data](https://gist.githubusercontent.com/peppertech/d1f80035fb040d61241359245d328659/raw/d9b085bb8cf5e4462333f313aa6cd13444dfe336/erpData.json), showing data, comparable to the below:
 
 <table><tr><td>   
 <img src="images/pic-009.png" alt="alt text" width="500" height="269">
