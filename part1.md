@@ -581,7 +581,7 @@ $.ajax
     "Authorization": "Basic " + btoa(USERNAME + ":" + PASSWORD)
   },
   success: function (results) {
-      self.dataProvider(new ArrayDataProvider(results.items, { keyAttributes: 'invoiceId' }));
+      self.dataProvider(new ArrayDataProvider(results.items, { keyAttributes: 'id' }));
   }
 });
 ```
