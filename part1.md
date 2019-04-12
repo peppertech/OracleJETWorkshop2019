@@ -438,7 +438,7 @@ start='[[new Date("January 1, 2019").toISOString()]]'
 end='[[new Date("Jan 31, 2020").toISOString()]]'
 ```
 
-Also, in 'my-invoice-timeline-view.js', change the current date as follows:
+Also, in 'my-invoice-timeline-viewModel.js', change the current date as follows:
 
 ```js #button { border: none; }
 self.currentDateString = "April 1, 2019";
@@ -489,7 +489,7 @@ In this section, you'll add some user interface components to your Web Component
 </oj-timeline>
 ```
 
-2. In 'my-invoice-timeline-view.js', load the components referenced above, that is, 'ojs/ojselectcombobox', 'ojs/ojlabel', and 'ojs/ojformlayout' by referencing them in the 'define' block, as shown below:
+2. In 'my-invoice-timeline-viewModel.js', load the components referenced above, that is, 'ojs/ojselectcombobox', 'ojs/ojlabel', and 'ojs/ojformlayout' by referencing them in the 'define' block, as shown below:
 
 ```js #button { border: none; }
 define(
@@ -503,7 +503,7 @@ define(
         function (ko, $, componentStrings) {
 ```        
 
-3. In 'my-invoice-timeline-view.js', use a new Prototype function to create an array of years for use in the timeline range pulldowns, as shown below:
+3. In 'my-invoice-timeline-viewModel.js', use a new Prototype function to create an array of years for use in the timeline range pulldowns, as shown below:
 
 ```js #button { border: none; }
 // Creating an array of years for use in the timeline range pulldowns
@@ -520,7 +520,7 @@ ExampleComponentModel.prototype._generateYears = function (context) {
 };
 ```
 
-4. In 'my-invoice-timeline-view.js', add the code below to the constructor to enable the start and end dates to be changed as needed:
+4. In 'my-invoice-timeline-viewModel.js', add the code below to the constructor to enable the start and end dates to be changed as needed:
 
 ```js #button { border: none; }
 self.itemSelection = ko.observableArray([]);
